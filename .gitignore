@@ -1,0 +1,42 @@
+# Python & Virtualenv
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Environment variables & secrets
+.env
+*.env
+!env_example.txt
+!.env.example
+
+# Datasets & large files
+data/raw/
+data/processed/
+data/external/tmdb_cache/
+*.parquet
+*.zip
+*.tar.gz
+
+# Trained model artifacts & logs
+artifacts/
+*.npz
+*.pkl
+
+# Node / Frontend
+node_modules/
+frontend/dist/
+frontend/.cache/
+
+# IDE & OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
