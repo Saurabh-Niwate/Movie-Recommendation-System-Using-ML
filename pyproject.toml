@@ -1,0 +1,6 @@
+[tool.uv.workspace]
+members = ["ml", "backend"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"

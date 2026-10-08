@@ -1,4 +1,4 @@
-# Python & Virtualenv
+# Python & Virtual Environment
 .venv/
 __pycache__/
 *.py[cod]
@@ -7,13 +7,24 @@ __pycache__/
 dist/
 build/
 
+# Testing & Linting Caches
+.pytest_cache/
+**/.pytest_cache/
+.ruff_cache/
+**/.ruff_cache/
+.coverage
+htmlcov/
+coverage.xml
+
 # Environment variables & secrets
 .env
 *.env
+.env.local
+.env.*.local
 !env_example.txt
 !.env.example
 
-# Datasets & large files
+# Datasets & Large Files
 data/raw/
 data/processed/
 data/external/tmdb_cache/
@@ -21,22 +32,44 @@ data/external/tmdb_cache/
 *.zip
 *.tar.gz
 
-# Trained model artifacts & logs
+# Trained Model Artifacts & Checkpoints
 artifacts/
 *.npz
 *.pkl
 
 # Node / Frontend
 node_modules/
+**/node_modules/
 frontend/dist/
 frontend/.cache/
+.vite/
+frontend/.vite/
+*.tsbuildinfo
+
+# AI & Assistant Agent State
+.agents/
+
+# Logs & Temporary Files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tmp
+*.temp
+
+# Databases
+*.sqlite
+*.sqlite3
+*.db
 
 # IDE & OS
 .DS_Store
+Thumbs.db
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# Jupyter checkpoints
+# Jupyter Notebook Checkpoints
 .ipynb_checkpoints/
