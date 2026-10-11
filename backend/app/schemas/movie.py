@@ -17,6 +17,8 @@ class MovieSummary(BaseModel):
     vote_average: Optional[float] = None
     vote_count: int = 0
     item_idx: Optional[int] = None
+    director: Optional[str] = None
+    cast: Optional[Any] = None
 
     model_config = ConfigDict(from_attributes=True)
 

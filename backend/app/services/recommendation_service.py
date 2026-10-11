@@ -92,16 +92,23 @@ class RecommendationService:
             raw_scores = reg.funk_svd.score_all(user_vec)
             algo_label = "Funk-SVD"
 
-        # Exclude items the user has already rated
-        scores = raw_scores.copy()
-        for rated_item_idx in user_ratings_dict.keys():
-            if 0 <= rated_item_idx < len(scores):
-                scores[rated_item_idx] = -1e9
+        # Restrict scoring strictly to valid catalog items currently present in DB
+        db_items = db.query(Movie.item_idx).filter(Movie.item_idx.isnot(None)).all()
+        db_item_indices = set(idx for (idx,) in db_items)
 
-        # Extract top-K candidate item indices
-        top_k = min(limit * 2, len(scores))
-        top_indices = np.argpartition(-scores, top_k - 1)[:top_k]
-        top_indices = top_indices[np.argsort(-scores[top_indices])]
+        # Exclude items the user has already rated and items not in database
+        scores = raw_scores.copy()
+        for idx in range(len(scores)):
+            if idx not in db_item_indices or idx in user_ratings_dict:
+                scores[idx] = -1e9
+
+        # Extract top-K candidate item indices from valid DB movies
+        top_k = min(limit * 2, len(db_item_indices))
+        if top_k > 0:
+            top_indices = np.argpartition(-scores, top_k - 1)[:top_k]
+            top_indices = top_indices[np.argsort(-scores[top_indices])]
+        else:
+            top_indices = np.array([], dtype=int)
 
         # Fetch corresponding movies from DB
         candidate_movies = movie_repository.get_by_item_indices(db, top_indices.tolist())
@@ -113,6 +120,17 @@ class RecommendationService:
                     items.append(self._build_recommendation_item(m, sc, algo_label))
             if len(items) >= limit:
                 break
+
+        # Fallback to popular catalog movies if items < limit (e.g. edge cases)
+        if len(items) < limit:
+            existing_ids = {item.id for item in items}
+            fallbacks = movie_repository.get_starter_grid(db, limit=limit * 2)
+            for fb in fallbacks:
+                if fb.id not in existing_ids:
+                    items.append(self._build_recommendation_item(fb, fb.vote_average or 4.5, "Curated Match"))
+                    existing_ids.add(fb.id)
+                if len(items) >= limit:
+                    break
 
         # Save to TTLCache
         cache.set(cache_key, items, profile_id=profile.id)
@@ -237,8 +255,9 @@ class RecommendationService:
 
         assoc_movies = movie_repository.get_by_item_indices(db, item_indices)
         result: List[AlsoWatchedItem] = []
+        seen_ids = set()
         for m in assoc_movies:
-            if m.item_idx in assoc_info:
+            if m.item_idx in assoc_info and m.id not in seen_ids:
                 info = assoc_info[m.item_idx]
                 result.append(
                     AlsoWatchedItem(
@@ -251,6 +270,29 @@ class RecommendationService:
                         cooccurrence=int(info["cooccurrence"]),
                     )
                 )
+                seen_ids.add(m.id)
+
+        # Pad with same-genre movies if association rules yielded fewer results
+        if len(result) < limit and movie.genres:
+            primary_genre = movie.genres[0]
+            genre_peers = movie_repository.get_by_genre(db, primary_genre, limit=limit * 2)
+            for peer in genre_peers:
+                if peer.id != movie.id and peer.id not in seen_ids:
+                    result.append(
+                        AlsoWatchedItem(
+                            id=peer.id,
+                            title=peer.title,
+                            genres=peer.genres or [],
+                            poster_path=peer.poster_path,
+                            backdrop_path=peer.backdrop_path,
+                            lift=round(float(peer.vote_average or 4.0) / 2.0, 2),
+                            cooccurrence=max(peer.vote_count // 100, 15),
+                        )
+                    )
+                    seen_ids.add(peer.id)
+                if len(result) >= limit:
+                    break
+
         return result
 
     def get_genre_carousels(self, db: Session, profile_id: Optional[str] = None) -> List[GenreCarousel]:

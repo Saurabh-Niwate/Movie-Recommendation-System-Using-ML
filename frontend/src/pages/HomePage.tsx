@@ -85,11 +85,20 @@ export const HomePage: React.FC = () => {
     return allMovies.filter((m) => {
       const matchGenre =
         selectedGenre === 'all' ||
-        m.genres.some((g) => g.toLowerCase().includes(selectedGenre.toLowerCase()));
+        (selectedGenre.toLowerCase() === 'sci-fi'
+          ? m.genres.some((g) => {
+              const lower = g.toLowerCase();
+              return lower.includes('sci') || lower.includes('science');
+            })
+          : m.genres.some((g) => g.toLowerCase().includes(selectedGenre.toLowerCase())));
+
+      const term = searchQuery.trim().toLowerCase();
       const matchSearch =
-        !searchQuery ||
-        m.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        m.genres.some((g) => g.toLowerCase().includes(searchQuery.toLowerCase()));
+        !term ||
+        m.title.toLowerCase().includes(term) ||
+        (m.director && m.director.toLowerCase().includes(term)) ||
+        m.genres.some((g) => g.toLowerCase().includes(term));
+
       return matchGenre && matchSearch;
     });
   }, [allMovies, searchQuery, selectedGenre]);

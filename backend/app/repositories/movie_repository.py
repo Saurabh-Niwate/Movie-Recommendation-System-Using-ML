@@ -30,6 +30,7 @@ class MovieRepository:
                 or_(
                     Movie.title.ilike(term),
                     Movie.title_raw.ilike(term),
+                    Movie.director.ilike(term),
                 )
             )
             .order_by(Movie.vote_count.desc(), Movie.id.asc())

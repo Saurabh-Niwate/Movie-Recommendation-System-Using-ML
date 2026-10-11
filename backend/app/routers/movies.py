@@ -43,6 +43,7 @@ def list_movies(
             or_(
                 Movie.title.ilike(term),
                 Movie.title_raw.ilike(term),
+                Movie.director.ilike(term),
             )
         )
 

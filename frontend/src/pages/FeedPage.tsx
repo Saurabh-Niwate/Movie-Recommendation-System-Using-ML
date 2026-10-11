@@ -50,58 +50,116 @@ export const FeedPage: React.FC = () => {
   };
 
   useEffect(() => {
-    // Load recommendations
-    apiFetch<any>('/recommendations?limit=15')
-      .then((data) => {
-        const items: RecMovie[] = Array.isArray(data) ? data : data.recommendations || data.items || [];
-        setTopRecs(items);
-      })
-      .catch((err) => {
-        if (err instanceof ApiError && err.status === 403) {
-          // Cold-start gating: redirect to onboarding!
-          navigate('/onboarding', { replace: true });
-        } else {
-          console.error('Failed to load recommendations:', err);
-          // Fallback to top catalog movies
-          apiFetch<{ items: RecMovie[] }>('/movies?limit=15&sort=popular').then((res) => {
-            setTopRecs(res.items || []);
-          });
+    let isMounted = true;
+
+    async function loadFeedData() {
+      try {
+        // 1. Fetch user's personalized top recommendations
+        let recs: RecMovie[] = [];
+        try {
+          const recData = await apiFetch<any>('/recommendations?limit=15');
+          recs = Array.isArray(recData) ? recData : recData.recommendations || recData.items || [];
+        } catch (err) {
+          if (err instanceof ApiError && err.status === 403) {
+            navigate('/onboarding', { replace: true });
+            return;
+          }
+          console.warn('Personalized recommendations unavailable, falling back to popular catalog:', err);
+          const popData = await apiFetch<{ items: RecMovie[] }>('/movies?limit=15&sort=popular');
+          recs = popData.items || [];
         }
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+        if (isMounted) setTopRecs(recs);
 
-    // Load Because You Liked
-    apiFetch<any>('/recommendations/because-you-liked?movie_id=2571&limit=5')
-      .then((data) => {
-        const items = data.recommendations || data.items || [];
-        setBecauseYouLiked({
-          seed: data.seed_movie_title || 'The Matrix',
-          movies: items,
-        });
-      })
-      .catch(() => {
-        // Fallback
-        apiFetch<{ items: RecMovie[] }>('/movies?genre=Sci-Fi&limit=5').then((res) => {
-          setBecauseYouLiked({
-            seed: 'Sci-Fi Classics',
-            movies: res.items || [],
-          });
-        });
-      });
+        // Track movie IDs already shown to ensure variety and prevent duplicates across rows
+        const shownMovieIds = new Set<number>(recs.map((m) => m.movie_id || m.id));
 
-    // Load Also Watched
-    apiFetch<any>('/recommendations/also-watched?movie_id=550&limit=5')
-      .then((data) => {
-        const items = data.recommendations || data.items || [];
-        setAlsoWatched(items);
-      })
-      .catch(() => {
-        apiFetch<{ items: RecMovie[] }>('/movies?genre=Thriller&limit=5').then((res) => {
-          setAlsoWatched(res.items || []);
-        });
-      });
+        // 2. Fetch user's existing ratings to find their favorite movie dynamically
+        let userFavoriteMovie: { id: number; title: string } | null = null;
+        try {
+          const ratings = await apiFetch<Array<{ movie_id: number; rating: number }>>('/ratings');
+          if (ratings && ratings.length > 0) {
+            const sortedRatings = [...ratings].sort((a, b) => b.rating - a.rating);
+            const topRatedMovie = await apiFetch<any>(`/movies/${sortedRatings[0].movie_id}`);
+            if (topRatedMovie && topRatedMovie.title) {
+              userFavoriteMovie = { id: topRatedMovie.id, title: topRatedMovie.title };
+            }
+          }
+        } catch (err) {
+          console.warn('Could not load user ratings for dynamic seed:', err);
+        }
+
+        // 3. Load Because You Liked using authenticated profile endpoint or dynamic favorite
+        try {
+          const bylData = await apiFetch<any>('/recommendations/because-you-liked');
+          const bylItems: RecMovie[] = bylData.recommendations || bylData.items || [];
+          const seedTitle =
+            bylData.source_movie?.title ||
+            userFavoriteMovie?.title ||
+            (recs.length > 0 ? recs[0].title : 'Your Favorites');
+          
+          const filteredByl = bylItems.filter((m) => !shownMovieIds.has(m.movie_id || m.id));
+          const finalByl = filteredByl.length >= 3 ? filteredByl : bylItems;
+          finalByl.forEach((m) => shownMovieIds.add(m.movie_id || m.id));
+
+          if (isMounted) {
+            setBecauseYouLiked({
+              seed: seedTitle,
+              movies: finalByl.slice(0, 5),
+            });
+          }
+        } catch (err) {
+          // Dynamic fallback to user's favorite or highest rated genre
+          const fallbackSeed = userFavoriteMovie?.title || (recs.length > 0 ? recs[0].title : 'Top Rated Cinema');
+          try {
+            const res = await apiFetch<{ items: RecMovie[] }>('/movies?limit=12&sort=top_rated');
+            const filteredFallback = (res.items || []).filter((m) => !shownMovieIds.has(m.movie_id || m.id));
+            if (isMounted) {
+              setBecauseYouLiked({
+                seed: fallbackSeed,
+                movies: (filteredFallback.length >= 5 ? filteredFallback : res.items || []).slice(0, 5),
+              });
+            }
+          } catch {
+            // ignore
+          }
+        }
+
+        // 4. Load More Like This (Also Watched) based on a different movie from Top Picks or catalog
+        const alsoSeedId =
+          (recs.length > 1 ? (recs[1].movie_id || recs[1].id) : null) ||
+          userFavoriteMovie?.id ||
+          550;
+
+        try {
+          const alsoData = await apiFetch<any>(`/recommendations/also-watched/${alsoSeedId}?limit=10`);
+          const alsoItems: RecMovie[] = Array.isArray(alsoData) ? alsoData : alsoData.items || alsoData.recommendations || [];
+          const filteredAlso = alsoItems.filter((m) => !shownMovieIds.has(m.movie_id || m.id));
+          const finalAlso = filteredAlso.length >= 4 ? filteredAlso : alsoItems;
+
+          if (isMounted) {
+            setAlsoWatched(finalAlso.slice(0, 5));
+          }
+        } catch {
+          try {
+            const res = await apiFetch<{ items: RecMovie[] }>('/movies?sort=recent&limit=10');
+            const filteredFallback = (res.items || []).filter((m) => !shownMovieIds.has(m.movie_id || m.id));
+            if (isMounted) {
+              setAlsoWatched((filteredFallback.length >= 5 ? filteredFallback : res.items || []).slice(0, 5));
+            }
+          } catch {
+            // ignore
+          }
+        }
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    }
+
+    loadFeedData();
+
+    return () => {
+      isMounted = false;
+    };
   }, [navigate]);
 
   const handleAddToWatchlist = async (movieId: number, title: string) => {
