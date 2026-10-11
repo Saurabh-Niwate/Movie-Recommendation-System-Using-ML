@@ -198,9 +198,6 @@ export const ProfilePage: React.FC = () => {
                       <span className="material-symbols-outlined text-secondary text-lg">tune</span>
                       <h2 className="text-xl font-bold text-on-surface">Genre Preferences</h2>
                     </div>
-                    <p className="text-xs text-on-surface-variant mt-0.5">
-                      Your personalized taste balance across popular film genres.
-                    </p>
                   </div>
                   <span className="px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary text-xs uppercase font-bold tracking-wider self-start sm:self-auto">
                     Top Preferences
@@ -333,9 +330,6 @@ export const ProfilePage: React.FC = () => {
                   </div>
                   <span className="material-symbols-outlined text-secondary text-2xl">polyline</span>
                 </div>
-                <p className="text-xs text-on-surface-variant mb-4">
-                  Visual projection of your cinematic attributes and storytelling preferences.
-                </p>
 
                 {/* SVG Taste Radar Hexagon */}
                 <div className="w-full flex items-center justify-center py-4">

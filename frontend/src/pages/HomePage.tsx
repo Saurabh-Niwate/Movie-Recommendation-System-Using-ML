@@ -117,10 +117,6 @@ export const HomePage: React.FC = () => {
               <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-on-surface tracking-tight leading-tight">
                 Discover Cinematic Masterpieces
               </h1>
-
-              <p className="text-sm sm:text-base text-on-surface-variant max-w-2xl leading-relaxed">
-                Explore exceptional cinema with personalized suggestions, authentic theatrical trailers, and cast insights tailored to your taste.
-              </p>
             </div>
 
             {/* Hero Search Bar */}
@@ -182,7 +178,6 @@ export const HomePage: React.FC = () => {
                   <h2 className="text-xl font-bold text-on-surface">
                     Filter Results ({filteredMovies.length} titles)
                   </h2>
-                  <p className="text-xs text-on-surface-variant">Matching your genre and title query</p>
                 </div>
                 <button
                   onClick={() => {
@@ -284,9 +279,6 @@ export const HomePage: React.FC = () => {
                     Quick Roll: Random Recommendations
                   </h2>
                 </div>
-                <p className="text-xs sm:text-sm text-on-surface-variant">
-                  Surprise cinematic picks across diverse genres and styles
-                </p>
               </div>
 
               <div className="flex items-center gap-3">
@@ -384,9 +376,6 @@ export const HomePage: React.FC = () => {
                 </div>
                 <div className="flex flex-col gap-1">
                   <h3 className="text-lg font-bold text-on-surface">Unlock Your Personalized Recommendations</h3>
-                  <p className="text-xs sm:text-sm text-on-surface-variant max-w-xl">
-                    Sign up free to rate films and receive custom recommendations tailored to your unique taste in cinema.
-                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-3 shrink-0">
@@ -410,9 +399,6 @@ export const HomePage: React.FC = () => {
                     Top Rated Movies of All Time
                   </h2>
                 </div>
-                <p className="text-xs sm:text-sm text-on-surface-variant">
-                  Universally acclaimed cinephile benchmarks with highest global user consensus
-                </p>
               </div>
               <span className="text-xs text-outline hidden md:inline">Consensus Score &gt; 96%</span>
             </div>

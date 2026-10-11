@@ -121,16 +121,11 @@ export const AuthPage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Title & Subtitle */}
+                {/* Title */}
                 <div className="space-y-1 text-center">
                   <h1 className="text-2xl sm:text-3xl font-extrabold text-on-surface tracking-tight">
                     {mode === 'signin' ? 'Sign In to MVZ' : 'Create Free Account'}
                   </h1>
-                  <p className="text-xs sm:text-sm text-on-surface-variant">
-                    {mode === 'signin'
-                      ? 'Sign in to access your personalized feed, watchlist, and custom recommendations.'
-                      : 'Discover movies tailored to your unique taste and cinematic style.'}
-                  </p>
                 </div>
 
                 {/* Error Banner */}

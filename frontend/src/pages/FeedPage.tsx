@@ -171,10 +171,6 @@ export const FeedPage: React.FC = () => {
                 {user?.full_name || user?.email.split('@')[0] || 'Curator'}
               </span>
             </h1>
-
-            <p className="text-sm sm:text-base text-on-surface-variant max-w-3xl leading-relaxed">
-              Your Curated Feed is tailored to your favorite genres and preferences — Sci-Fi, Psychological Thriller, Denis Villeneuve, Christopher Nolan, and Inception.
-            </p>
           </div>
         </section>
 
@@ -267,9 +263,6 @@ export const FeedPage: React.FC = () => {
                   Top Recommendations for You
                 </h2>
               </div>
-              <p className="text-xs sm:text-sm text-on-surface-variant">
-                Handpicked selections based on your ratings and viewer favorites
-              </p>
             </div>
             <span className="text-xs text-outline font-medium">Updated Today</span>
           </div>
@@ -374,9 +367,6 @@ export const FeedPage: React.FC = () => {
                   Because You Liked <span className="text-primary">{becauseYouLiked.seed}</span>
                 </h2>
               </div>
-              <p className="text-xs sm:text-sm text-on-surface-variant">
-                Titles with similar tone, themes, and storytelling
-              </p>
             </div>
           </div>
 
@@ -451,9 +441,6 @@ export const FeedPage: React.FC = () => {
                   More Like This
                 </h2>
               </div>
-              <p className="text-xs sm:text-sm text-on-surface-variant">
-                Popular choices among viewers with similar cinematic taste
-              </p>
             </div>
           </div>
 

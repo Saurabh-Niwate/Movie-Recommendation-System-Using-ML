@@ -37,12 +37,9 @@ export const ProfilePickerPage: React.FC = () => {
 
       {/* Main Profile Selection */}
       <main className="max-w-4xl mx-auto w-full text-center my-auto py-12">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-3">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-8">
           Who&apos;s watching?
         </h1>
-        <p className="text-zinc-400 text-sm sm:text-base max-w-lg mx-auto mb-12">
-          Choose a profile to start exploring personalized film recommendations.
-        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 md:gap-10">
           {profiles.map((profile) => {

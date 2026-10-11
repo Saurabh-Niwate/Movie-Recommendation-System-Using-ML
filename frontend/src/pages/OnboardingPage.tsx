@@ -145,9 +145,6 @@ export const OnboardingPage: React.FC = () => {
                   Taste Profile
                 </span>
               </h1>
-              <p className="text-sm sm:text-base text-on-surface-variant mt-2 max-w-2xl leading-relaxed">
-                Select and rate at least {MIN_REQUIRED} films across your favorite genres to unlock your custom recommendations.
-              </p>
             </div>
 
             {/* Circular Meter Status Pill */}

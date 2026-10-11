@@ -158,9 +158,6 @@ export const RankingsPage: React.FC = () => {
                 <h1 className="text-3xl sm:text-5xl font-extrabold text-on-surface tracking-tight">
                   Top Rated Movies
                 </h1>
-                <p className="text-sm text-on-surface-variant max-w-2xl leading-relaxed">
-                  The greatest films of all time, ranked by critic ratings, viewer sentiment, and verified global consensus.
-                </p>
               </div>
             </div>
 
