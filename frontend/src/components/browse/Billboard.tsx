@@ -87,7 +87,7 @@ export const Billboard: React.FC<BillboardProps> = ({
 
           {/* Synopsis */}
           <p className="text-sm sm:text-base text-zinc-300 line-clamp-3 leading-relaxed drop-shadow-md my-4 max-w-xl">
-            {movie.synopsis || movie.overview || 'Explore this personalized recommendation selected by CineMatch latent factor models.'}
+            {movie.synopsis || movie.overview || 'Explore this personalized recommendation selected for your taste profile.'}
           </p>
 
           {/* Action Buttons */}

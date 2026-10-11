@@ -1,0 +1,2005 @@
+[
+  {
+    "id": 693134,
+    "tmdb_id": 693134,
+    "movie_lens_id": 693134,
+    "title": "Dune: Part Two",
+    "title_raw": "Dune: Part Two",
+    "year": 2024,
+    "genres": [
+      "Science Fiction",
+      "Adventure"
+    ],
+    "overview": "Follow the mythic journey of Paul Atreides as he unites with Chani and the Fremen while on a path of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, Paul endeavors to prevent a terrible future only he can foresee.",
+    "synopsis": "Follow the mythic journey of Paul Atreides as he unites with Chani and the Fremen while on a path of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, Paul endeavors to prevent a terrible future only he can foresee.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/6izwz7rsy95ARzTR3poZ8H6c5pp.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/eZ239CUp1d6OryZEBPnO2n87gMG.jpg",
+    "vote_average": 8.1,
+    "vote_count": 8713,
+    "director": "Denis Villeneuve",
+    "cast": [
+      "Timothée Chalamet",
+      "Zendaya",
+      "Rebecca Ferguson",
+      "Javier Bardem",
+      "Josh Brolin"
+    ],
+    "runtime": 167,
+    "trailer_key": "U2Qp5pL3ovA"
+  },
+  {
+    "id": 872585,
+    "tmdb_id": 872585,
+    "movie_lens_id": 872585,
+    "title": "Oppenheimer",
+    "title_raw": "Oppenheimer",
+    "year": 2023,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "overview": "The story of J. Robert Oppenheimer's role in the development of the atomic bomb during World War II.",
+    "synopsis": "The story of J. Robert Oppenheimer's role in the development of the atomic bomb during World War II.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/7CENyUim29IEsaJhUxIGymCRvPu.jpg",
+    "vote_average": 8.0,
+    "vote_count": 12661,
+    "director": "Christopher Nolan",
+    "cast": [
+      "Cillian Murphy",
+      "Emily Blunt",
+      "Matt Damon",
+      "Robert Downey Jr.",
+      "Florence Pugh"
+    ],
+    "runtime": 181,
+    "trailer_key": "qiuSBWVdgLI"
+  },
+  {
+    "id": 569094,
+    "tmdb_id": 569094,
+    "movie_lens_id": 569094,
+    "title": "Spider-Man: Across the Spider-Verse",
+    "title_raw": "Spider-Man: Across the Spider-Verse",
+    "year": 2023,
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure",
+      "Science Fiction"
+    ],
+    "overview": "After reuniting with Gwen Stacy, Brooklyn’s full-time, friendly neighborhood Spider-Man is catapulted across the Multiverse, where he encounters the Spider Society, a team of Spider-People charged with protecting the Multiverse's very existence. But when the heroes clash on how to handle a new threat, Miles finds himself pitted against the other Spiders and must set out on his own to save those he loves most.",
+    "synopsis": "After reuniting with Gwen Stacy, Brooklyn’s full-time, friendly neighborhood Spider-Man is catapulted across the Multiverse, where he encounters the Spider Society, a team of Spider-People charged with protecting the Multiverse's very existence. But when the heroes clash on how to handle a new threat, Miles finds himself pitted against the other Spiders and must set out on his own to save those he loves most.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/kVd3a9YeLGkoeR50jGEXM6EqseS.jpg",
+    "vote_average": 8.4,
+    "vote_count": 9382,
+    "director": "Justin K. Thompson",
+    "cast": [
+      "Shameik Moore",
+      "Hailee Steinfeld",
+      "Brian Tyree Henry",
+      "Luna Lauren Vélez",
+      "Jake Johnson"
+    ],
+    "runtime": 140,
+    "trailer_key": "yFrxzaBLDQM"
+  },
+  {
+    "id": 157336,
+    "tmdb_id": 157336,
+    "movie_lens_id": 157336,
+    "title": "Interstellar",
+    "title_raw": "Interstellar",
+    "year": 2014,
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Science Fiction"
+    ],
+    "overview": "The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.",
+    "synopsis": "The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/8sNiAPPYU14PUepFNeSNGUTiHW.jpg",
+    "vote_average": 8.5,
+    "vote_count": 41431,
+    "director": "Christopher Nolan",
+    "cast": [
+      "Matthew McConaughey",
+      "Anne Hathaway",
+      "Michael Caine",
+      "Jessica Chastain",
+      "Casey Affleck"
+    ],
+    "runtime": 169,
+    "trailer_key": "LY19rHKAaAg"
+  },
+  {
+    "id": 27205,
+    "tmdb_id": 27205,
+    "movie_lens_id": 27205,
+    "title": "Inception",
+    "title_raw": "Inception",
+    "year": 2010,
+    "genres": [
+      "Action",
+      "Science Fiction",
+      "Adventure"
+    ],
+    "overview": "Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: \"inception\", the implantation of another person's idea into a target's subconscious.",
+    "synopsis": "Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: \"inception\", the implantation of another person's idea into a target's subconscious.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",
+    "vote_average": 8.4,
+    "vote_count": 40389,
+    "director": "Christopher Nolan",
+    "cast": [
+      "Leonardo DiCaprio",
+      "Joseph Gordon-Levitt",
+      "Ken Watanabe",
+      "Tom Hardy",
+      "Elliot Page"
+    ],
+    "runtime": 148,
+    "trailer_key": "JE9z-gy4De4"
+  },
+  {
+    "id": 155,
+    "tmdb_id": 155,
+    "movie_lens_id": 155,
+    "title": "The Dark Knight",
+    "title_raw": "The Dark Knight",
+    "year": 2008,
+    "genres": [
+      "Action",
+      "Thriller",
+      "Crime"
+    ],
+    "overview": "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.",
+    "synopsis": "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/9FE5eD92WfVCiivM9Pq9GVSrlWk.jpg",
+    "vote_average": 8.5,
+    "vote_count": 36934,
+    "director": "Christopher Nolan",
+    "cast": [
+      "Christian Bale",
+      "Heath Ledger",
+      "Aaron Eckhart",
+      "Michael Caine",
+      "Maggie Gyllenhaal"
+    ],
+    "runtime": 152,
+    "trailer_key": "_PZpmTj1Q8Q"
+  },
+  {
+    "id": 414906,
+    "tmdb_id": 414906,
+    "movie_lens_id": 414906,
+    "title": "The Batman",
+    "title_raw": "The Batman",
+    "year": 2022,
+    "genres": [
+      "Crime",
+      "Mystery",
+      "Thriller"
+    ],
+    "overview": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.",
+    "synopsis": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/rvtdN5XkWAfGX6xDuPL6yYS2seK.jpg",
+    "vote_average": 7.7,
+    "vote_count": 12646,
+    "director": "Matt Reeves",
+    "cast": [
+      "Robert Pattinson",
+      "Zoë Kravitz",
+      "Jeffrey Wright",
+      "Colin Farrell",
+      "Paul Dano"
+    ],
+    "runtime": 177,
+    "trailer_key": "vc7_mH2PWHs"
+  },
+  {
+    "id": 361743,
+    "tmdb_id": 361743,
+    "movie_lens_id": 361743,
+    "title": "Top Gun: Maverick",
+    "title_raw": "Top Gun: Maverick",
+    "year": 2022,
+    "genres": [
+      "Action",
+      "Drama"
+    ],
+    "overview": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
+    "synopsis": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/n0YuM4f5lvGAP6MAW2kBIzugXnc.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/AaV1YIdWKnjAIAOe8UUKBFm327v.jpg",
+    "vote_average": 8.2,
+    "vote_count": 11685,
+    "director": "Joseph Kosinski",
+    "cast": [
+      "Tom Cruise",
+      "Miles Teller",
+      "Jennifer Connelly",
+      "Bashir Salahuddin",
+      "Jon Hamm"
+    ],
+    "runtime": 131,
+    "trailer_key": "Klc__shdj88"
+  },
+  {
+    "id": 299534,
+    "tmdb_id": 299534,
+    "movie_lens_id": 299534,
+    "title": "Avengers: Endgame",
+    "title_raw": "Avengers: Endgame",
+    "year": 2019,
+    "genres": [
+      "Adventure",
+      "Science Fiction",
+      "Action"
+    ],
+    "overview": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and restore order to the universe once and for all, no matter what consequences may be in store.",
+    "synopsis": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and restore order to the universe once and for all, no matter what consequences may be in store.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
+    "vote_average": 8.2,
+    "vote_count": 28959,
+    "director": "Anthony Russo",
+    "cast": [
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Mark Ruffalo",
+      "Chris Hemsworth",
+      "Scarlett Johansson"
+    ],
+    "runtime": 181,
+    "trailer_key": "L2NAh3CIdig"
+  },
+  {
+    "id": 496243,
+    "tmdb_id": 496243,
+    "movie_lens_id": 496243,
+    "title": "Parasite",
+    "title_raw": "기생충",
+    "year": 2019,
+    "genres": [
+      "Comedy",
+      "Thriller",
+      "Drama"
+    ],
+    "overview": "All unemployed, Ki-taek's family takes peculiar interest in the wealthy and glamorous Parks for their livelihood until they get entangled in an unexpected incident.",
+    "synopsis": "All unemployed, Ki-taek's family takes peculiar interest in the wealthy and glamorous Parks for their livelihood until they get entangled in an unexpected incident.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg",
+    "vote_average": 8.5,
+    "vote_count": 21456,
+    "director": "Bong Joon Ho",
+    "cast": [
+      "Song Kang-ho",
+      "Lee Sun-kyun",
+      "Cho Yeo-jeong",
+      "Choi Woo-shik",
+      "Park So-dam"
+    ],
+    "runtime": 133,
+    "trailer_key": "bM9QabAojCg"
+  },
+  {
+    "id": 244786,
+    "tmdb_id": 244786,
+    "movie_lens_id": 244786,
+    "title": "Whiplash",
+    "title_raw": "Whiplash",
+    "year": 2014,
+    "genres": [
+      "Drama",
+      "Music",
+      "Thriller"
+    ],
+    "overview": "Under the direction of a ruthless instructor, a talented young drummer begins to pursue perfection at any cost, even his humanity.",
+    "synopsis": "Under the direction of a ruthless instructor, a talented young drummer begins to pursue perfection at any cost, even his humanity.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/7fn624j5lj3xTme2SgiLCeuedmO.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/fRGxZuo7jJUWQsVg9PREb98Aclp.jpg",
+    "vote_average": 8.4,
+    "vote_count": 17202,
+    "director": "Damien Chazelle",
+    "cast": [
+      "Miles Teller",
+      "J.K. Simmons",
+      "Paul Reiser",
+      "Melissa Benoist",
+      "Austin Stowell"
+    ],
+    "runtime": 107,
+    "trailer_key": "Q7kZy3T6vRM"
+  },
+  {
+    "id": 550,
+    "tmdb_id": 550,
+    "movie_lens_id": 550,
+    "title": "Fight Club",
+    "title_raw": "Fight Club",
+    "year": 1999,
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "overview": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
+    "synopsis": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/c6OLXfKAk5BKeR6broC8pYiCquX.jpg",
+    "vote_average": 8.4,
+    "vote_count": 32997,
+    "director": "David Fincher",
+    "cast": [
+      "Edward Norton",
+      "Brad Pitt",
+      "Helena Bonham Carter",
+      "Meat Loaf",
+      "Jared Leto"
+    ],
+    "runtime": 139,
+    "trailer_key": "dfeUzm6KF4g"
+  },
+  {
+    "id": 603,
+    "tmdb_id": 603,
+    "movie_lens_id": 603,
+    "title": "The Matrix",
+    "title_raw": "The Matrix",
+    "year": 1999,
+    "genres": [
+      "Action",
+      "Science Fiction"
+    ],
+    "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
+    "synopsis": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/tlm8UkiQsitc8rSuIAscQDCnP8d.jpg",
+    "vote_average": 8.3,
+    "vote_count": 28920,
+    "director": "Lana Wachowski",
+    "cast": [
+      "Keanu Reeves",
+      "Laurence Fishburne",
+      "Carrie-Anne Moss",
+      "Hugo Weaving",
+      "Gloria Foster"
+    ],
+    "runtime": 136,
+    "trailer_key": "FVI84Dfx2-I"
+  },
+  {
+    "id": 680,
+    "tmdb_id": 680,
+    "movie_lens_id": 680,
+    "title": "Pulp Fiction",
+    "title_raw": "Pulp Fiction",
+    "year": 1994,
+    "genres": [
+      "Thriller",
+      "Crime",
+      "Comedy"
+    ],
+    "overview": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
+    "synopsis": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg",
+    "vote_average": 8.5,
+    "vote_count": 31053,
+    "director": "Quentin Tarantino",
+    "cast": [
+      "John Travolta",
+      "Samuel L. Jackson",
+      "Uma Thurman",
+      "Bruce Willis",
+      "Ving Rhames"
+    ],
+    "runtime": 154,
+    "trailer_key": "tGpTpVyI_OQ"
+  },
+  {
+    "id": 278,
+    "tmdb_id": 278,
+    "movie_lens_id": 278,
+    "title": "The Shawshank Redemption",
+    "title_raw": "The Shawshank Redemption",
+    "year": 1994,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "overview": "Imprisoned in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.",
+    "synopsis": "Imprisoned in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/pNjh59JSxChQktamG3LMp9ZoQzp.jpg",
+    "vote_average": 8.7,
+    "vote_count": 31540,
+    "director": "Frank Darabont",
+    "cast": [
+      "Tim Robbins",
+      "Morgan Freeman",
+      "Bob Gunton",
+      "William Sadler",
+      "Clancy Brown"
+    ],
+    "runtime": 142,
+    "trailer_key": "PLl99DlL6b4"
+  },
+  {
+    "id": 129,
+    "tmdb_id": 129,
+    "movie_lens_id": 129,
+    "title": "Spirited Away",
+    "title_raw": "千と千尋の神隠し",
+    "year": 2001,
+    "genres": [
+      "Animation",
+      "Family",
+      "Fantasy"
+    ],
+    "overview": "A young girl, Chihiro, becomes trapped in a strange new world of spirits. When her parents undergo a mysterious transformation, she must call upon the courage she never knew she had to free her family.",
+    "synopsis": "A young girl, Chihiro, becomes trapped in a strange new world of spirits. When her parents undergo a mysterious transformation, she must call upon the courage she never knew she had to free her family.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/6oaL4DP75yABrd5EbC4H2zq5ghc.jpg",
+    "vote_average": 8.5,
+    "vote_count": 19019,
+    "director": "Hayao Miyazaki",
+    "cast": [
+      "Rumi Hiiragi",
+      "Miyu Irino",
+      "Mari Natsuki",
+      "Takashi Naito",
+      "Yasuko Sawaguchi"
+    ],
+    "runtime": 125,
+    "trailer_key": "GAp2_0JJskk"
+  },
+  {
+    "id": 122,
+    "tmdb_id": 122,
+    "movie_lens_id": 122,
+    "title": "The Lord of the Rings: The Return of the King",
+    "title_raw": "The Lord of the Rings: The Return of the King",
+    "year": 2003,
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Action"
+    ],
+    "overview": "As armies mass for a final battle that will decide the fate of the world--and powerful, ancient forces of Light and Dark compete to determine the outcome--one member of the Fellowship of the Ring is revealed as the noble heir to the throne of the Kings of Men. Yet, the sole hope for triumph over evil lies with a brave hobbit, Frodo, who, accompanied by his loyal friend Sam and the hideous, wretched Gollum, ventures deep into the very dark heart of Mordor on his seemingly impossible quest to destroy the Ring of Power.​",
+    "synopsis": "As armies mass for a final battle that will decide the fate of the world--and powerful, ancient forces of Light and Dark compete to determine the outcome--one member of the Fellowship of the Ring is revealed as the noble heir to the throne of the Kings of Men. Yet, the sole hope for triumph over evil lies with a brave hobbit, Frodo, who, accompanied by his loyal friend Sam and the hideous, wretched Gollum, ventures deep into the very dark heart of Mordor on his seemingly impossible quest to destroy the Ring of Power.​",
+    "poster_path": "https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/2u7zbn8EudG6kLlBzUYqP8RyFU4.jpg",
+    "vote_average": 8.5,
+    "vote_count": 27549,
+    "director": "Peter Jackson",
+    "cast": [
+      "Elijah Wood",
+      "Ian McKellen",
+      "Viggo Mortensen",
+      "Sean Astin",
+      "Andy Serkis"
+    ],
+    "runtime": 201,
+    "trailer_key": "zckJCxYxn1g"
+  },
+  {
+    "id": 862,
+    "tmdb_id": 862,
+    "movie_lens_id": 862,
+    "title": "Toy Story",
+    "title_raw": "Toy Story",
+    "year": 1995,
+    "genres": [
+      "Family",
+      "Comedy",
+      "Animation",
+      "Adventure"
+    ],
+    "overview": "Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.",
+    "synopsis": "Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/3Rfvhy1Nl6sSGJwyjb0QiZzZYlB.jpg",
+    "vote_average": 8.0,
+    "vote_count": 20645,
+    "director": "John Lasseter",
+    "cast": [
+      "Tom Hanks",
+      "Tim Allen",
+      "Don Rickles",
+      "Jim Varney",
+      "Wallace Shawn"
+    ],
+    "runtime": 81,
+    "trailer_key": "CxwTLktovTU"
+  },
+  {
+    "id": 280,
+    "tmdb_id": 280,
+    "movie_lens_id": 280,
+    "title": "Terminator 2: Judgment Day",
+    "title_raw": "Terminator 2: Judgment Day",
+    "year": 1991,
+    "genres": [
+      "Action",
+      "Thriller",
+      "Science Fiction"
+    ],
+    "overview": "Ten years after the events of the original, a reprogrammed T-800 is sent back in time to protect young John Connor from the shape-shifting T-1000. Together with his mother Sarah, he fights to stop Skynet from triggering a nuclear apocalypse.",
+    "synopsis": "Ten years after the events of the original, a reprogrammed T-800 is sent back in time to protect young John Connor from the shape-shifting T-1000. Together with his mother Sarah, he fights to stop Skynet from triggering a nuclear apocalypse.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/jFTVD4XoWQTcg7wdyJKa8PEds5q.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/izkMjmhauFx9DjoBQqM5sM5WAwE.jpg",
+    "vote_average": 8.2,
+    "vote_count": 14993,
+    "director": "James Cameron",
+    "cast": [
+      "Arnold Schwarzenegger",
+      "Linda Hamilton",
+      "Edward Furlong",
+      "Robert Patrick",
+      "Earl Boen"
+    ],
+    "runtime": 137,
+    "trailer_key": "BuBD2s2NmEM"
+  },
+  {
+    "id": 11,
+    "tmdb_id": 11,
+    "movie_lens_id": 11,
+    "title": "Star Wars",
+    "title_raw": "Star Wars",
+    "year": 1977,
+    "genres": [
+      "Adventure",
+      "Action",
+      "Science Fiction"
+    ],
+    "overview": "Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.",
+    "synopsis": "Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/fai0rspsNeJCS69wHNjOdWxcI7P.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/zqkmTXzjkAgXmEWLRsY4UpTWCeo.jpg",
+    "vote_average": 8.2,
+    "vote_count": 22982,
+    "director": "George Lucas",
+    "cast": [
+      "Mark Hamill",
+      "Harrison Ford",
+      "Carrie Fisher",
+      "Peter Cushing",
+      "Alec Guinness"
+    ],
+    "runtime": 121,
+    "trailer_key": "i-vsILeJ8_8"
+  },
+  {
+    "id": 13,
+    "tmdb_id": 13,
+    "movie_lens_id": 13,
+    "title": "Forrest Gump",
+    "title_raw": "Forrest Gump",
+    "year": 1994,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "overview": "A man with a low IQ has accomplished great things in his life and been present during significant historic events—in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.",
+    "synopsis": "A man with a low IQ has accomplished great things in his life and been present during significant historic events—in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/saHP97rTPS5eLmrLQEcANmKrsFl.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/66Kn4XWhkuPkJxOJyPEx4U2CUfN.jpg",
+    "vote_average": 8.5,
+    "vote_count": 30623,
+    "director": "Robert Zemeckis",
+    "cast": [
+      "Tom Hanks",
+      "Robin Wright",
+      "Gary Sinise",
+      "Sally Field",
+      "Mykelti Williamson"
+    ],
+    "runtime": 142,
+    "trailer_key": "Mj9IA9tTfio"
+  },
+  {
+    "id": 238,
+    "tmdb_id": 238,
+    "movie_lens_id": 238,
+    "title": "The Godfather",
+    "title_raw": "The Godfather",
+    "year": 1972,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "overview": "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
+    "synopsis": "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/ejdD20cdHNFAYAN2DlqPToXKyzx.jpg",
+    "vote_average": 8.7,
+    "vote_count": 23727,
+    "director": "Francis Ford Coppola",
+    "cast": [
+      "Marlon Brando",
+      "Al Pacino",
+      "James Caan",
+      "Robert Duvall",
+      "Richard S. Castellano"
+    ],
+    "runtime": 175,
+    "trailer_key": "Ew9ngL1GZvs"
+  },
+  {
+    "id": 597,
+    "tmdb_id": 597,
+    "movie_lens_id": 597,
+    "title": "Titanic",
+    "title_raw": "Titanic",
+    "year": 1997,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "overview": "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic, 84 years later. A young Rose boards the ship with her mother and fiancé. Meanwhile, Jack Dawson and Fabrizio De Rossi win third-class tickets aboard the ship. Rose tells the whole story from Titanic's departure through to its death—on its first and last voyage—on April 15, 1912.",
+    "synopsis": "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic, 84 years later. A young Rose boards the ship with her mother and fiancé. Meanwhile, Jack Dawson and Fabrizio De Rossi win third-class tickets aboard the ship. Rose tells the whole story from Titanic's departure through to its death—on its first and last voyage—on April 15, 1912.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/xXCuto8YVp5RFqBJ7yKmVmLOWpF.jpg",
+    "vote_average": 7.9,
+    "vote_count": 27868,
+    "director": "James Cameron",
+    "cast": [
+      "Leonardo DiCaprio",
+      "Kate Winslet",
+      "Billy Zane",
+      "Kathy Bates",
+      "Frances Fisher"
+    ],
+    "runtime": 194,
+    "trailer_key": "wO44qBPBG4c"
+  },
+  {
+    "id": 424,
+    "tmdb_id": 424,
+    "movie_lens_id": 424,
+    "title": "Schindler's List",
+    "title_raw": "Schindler's List",
+    "year": 1993,
+    "genres": [
+      "Drama",
+      "History",
+      "War"
+    ],
+    "overview": "The true story of how businessman Oskar Schindler saved over a thousand Jewish lives from the Nazis while they worked as slaves in his factory during World War II.",
+    "synopsis": "The true story of how businessman Oskar Schindler saved over a thousand Jewish lives from the Nazis while they worked as slaves in his factory during World War II.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/zb6fM1CX41D9rF9hdgclu0peUmy.jpg",
+    "vote_average": 8.6,
+    "vote_count": 18016,
+    "director": "Steven Spielberg",
+    "cast": [
+      "Liam Neeson",
+      "Ben Kingsley",
+      "Ralph Fiennes",
+      "Caroline Goodall",
+      "Jonathan Sagall"
+    ],
+    "runtime": 195,
+    "trailer_key": "v0RB-3sWbBA"
+  },
+  {
+    "id": 274,
+    "tmdb_id": 274,
+    "movie_lens_id": 274,
+    "title": "The Silence of the Lambs",
+    "title_raw": "The Silence of the Lambs",
+    "year": 1991,
+    "genres": [
+      "Crime",
+      "Thriller",
+      "Drama"
+    ],
+    "overview": "Clarice Starling is a top student at the FBI's training academy.  Jack Crawford wants Clarice to interview Dr. Hannibal Lecter, a brilliant psychiatrist who is also a violent psychopath, serving life behind bars for various acts of murder and cannibalism.  Crawford believes that Lecter may have insight into a case and that Starling, as an attractive young woman, may be just the bait to draw him out.",
+    "synopsis": "Clarice Starling is a top student at the FBI's training academy.  Jack Crawford wants Clarice to interview Dr. Hannibal Lecter, a brilliant psychiatrist who is also a violent psychopath, serving life behind bars for various acts of murder and cannibalism.  Crawford believes that Lecter may have insight into a case and that Starling, as an attractive young woman, may be just the bait to draw him out.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/uS9m8OBk1A8eM9I042bx8XXpqAq.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/mbOx1wxMLikzwWUO9TKAcFIy6op.jpg",
+    "vote_average": 8.3,
+    "vote_count": 18626,
+    "director": "Jonathan Demme",
+    "cast": [
+      "Jodie Foster",
+      "Anthony Hopkins",
+      "Scott Glenn",
+      "Ted Levine",
+      "Anthony Heald"
+    ],
+    "runtime": 119,
+    "trailer_key": "6iB21hsprAQ"
+  },
+  {
+    "id": 85,
+    "tmdb_id": 85,
+    "movie_lens_id": 85,
+    "title": "Raiders of the Lost Ark",
+    "title_raw": "Raiders of the Lost Ark",
+    "year": 1981,
+    "genres": [
+      "Adventure",
+      "Action"
+    ],
+    "overview": "When Dr. Indiana Jones – the tweed-suited professor who just happens to be a celebrated archaeologist – is hired by the government to locate the legendary Ark of the Covenant, he finds himself up against the entire Nazi regime.",
+    "synopsis": "When Dr. Indiana Jones – the tweed-suited professor who just happens to be a celebrated archaeologist – is hired by the government to locate the legendary Ark of the Covenant, he finds himself up against the entire Nazi regime.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/ceG9VzoRAVGwivFU403Wc3AHRys.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/zPACwR32amTNvzId9qyapCWXYDJ.jpg",
+    "vote_average": 7.9,
+    "vote_count": 14082,
+    "director": "Steven Spielberg",
+    "cast": [
+      "Harrison Ford",
+      "Karen Allen",
+      "Paul Freeman",
+      "John Rhys-Davies",
+      "Ronald Lacey"
+    ],
+    "runtime": 115,
+    "trailer_key": "0xQSIdSRlAk"
+  },
+  {
+    "id": 969681,
+    "tmdb_id": 969681,
+    "movie_lens_id": 969681,
+    "title": "Spider-Man: Brand New Day",
+    "title_raw": "Spider-Man: Brand New Day",
+    "year": 2026,
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Adventure"
+    ],
+    "overview": "Fighting crime full-time as Spider-Man in a world that doesn't remember him—and the pressure of seeing his old friends move on without him—sparks a change in Peter Parker he may not have the power to control. But that transformation might also be the only thing that can stop a shocking new threat to the city and those he loves - a powerful villain no one can even see.",
+    "synopsis": "Fighting crime full-time as Spider-Man in a world that doesn't remember him—and the pressure of seeing his old friends move on without him—sparks a change in Peter Parker he may not have the power to control. But that transformation might also be the only thing that can stop a shocking new threat to the city and those he loves - a powerful villain no one can even see.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/4tjxYg2AbOzzG9G1YuiT2NzYhlH.jpg",
+    "vote_average": 8.4,
+    "vote_count": 4771,
+    "director": "Destin Daniel Cretton",
+    "cast": [
+      "Tom Holland",
+      "Sadie Sink",
+      "Tramell Tillman",
+      "Zendaya",
+      "Jacob Batalon"
+    ],
+    "runtime": 145,
+    "trailer_key": "P3uI5sLosKU"
+  },
+  {
+    "id": 1236045,
+    "tmdb_id": 1236045,
+    "movie_lens_id": 1236045,
+    "title": "Animals",
+    "title_raw": "Animals",
+    "year": 2026,
+    "genres": [
+      "Thriller",
+      "Drama"
+    ],
+    "overview": "When the son of an L.A. mayoral candidate is kidnapped, he and his wife have a few hours to come up with the ransom payment. With most of their money spent on his political campaign, they have to get their hands dirty and expose a side of their lives they never intended to see the light of day.",
+    "synopsis": "When the son of an L.A. mayoral candidate is kidnapped, he and his wife have a few hours to come up with the ransom payment. With most of their money spent on his political campaign, they have to get their hands dirty and expose a side of their lives they never intended to see the light of day.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/cyltXU1lAGhRFBuHQIMWBAPj8fI.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/tzoarEu7TsG959upiELyYPm5kO9.jpg",
+    "vote_average": 7.2,
+    "vote_count": 87,
+    "director": "Ben Affleck",
+    "cast": [
+      "Ben Affleck",
+      "Kerry Washington",
+      "Gillian Anderson",
+      "Steven Yeun",
+      "Adriana Paz"
+    ],
+    "runtime": 106,
+    "trailer_key": "ZkN2M4ODdys"
+  },
+  {
+    "id": 1148365,
+    "tmdb_id": 1148365,
+    "movie_lens_id": 1148365,
+    "title": "Matchbox the Movie",
+    "title_raw": "Matchbox the Movie",
+    "year": 2026,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Adventure"
+    ],
+    "overview": "When a group of former childhood friends reconnect, their reunion takes a wild turn as they stumble upon a dangerous international plot—and must save the world.",
+    "synopsis": "When a group of former childhood friends reconnect, their reunion takes a wild turn as they stumble upon a dangerous international plot—and must save the world.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/lFKA4GMz36dImEy3DQPdPF7G4V9.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/jdJsnhHfkIi3J7jwfiCFT4gXNx5.jpg",
+    "vote_average": 7.6,
+    "vote_count": 87,
+    "director": "Sam Hargrave",
+    "cast": [
+      "John Cena",
+      "Jessica Biel",
+      "Sam Richardson",
+      "Arturo Castro",
+      "Teyonah Parris"
+    ],
+    "runtime": 127,
+    "trailer_key": "7xfqITrMDcI"
+  },
+  {
+    "id": 1291595,
+    "tmdb_id": 1291595,
+    "movie_lens_id": 1291595,
+    "title": "Insidious: Out of the Further",
+    "title_raw": "Insidious: Out of the Further",
+    "year": 2026,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "overview": "Gemma, a young mother raising her daughter in the house she grew up in, discovers she can travel into The Further, the purgatorial realm of lost souls at the heart of the Insidious universe. When something evil comes after her, Gemma discovers an ability that changes everything: she doesn't just enter The Further, she can bring what lives there back to the real world. Once the demons realize her power, our world becomes their playground.",
+    "synopsis": "Gemma, a young mother raising her daughter in the house she grew up in, discovers she can travel into The Further, the purgatorial realm of lost souls at the heart of the Insidious universe. When something evil comes after her, Gemma discovers an ability that changes everything: she doesn't just enter The Further, she can bring what lives there back to the real world. Once the demons realize her power, our world becomes their playground.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/p40lmrdI4blcAPZQMTPaiy5v5Ym.jpg",
+    "vote_average": 7.6,
+    "vote_count": 505,
+    "director": "Jacob Chase",
+    "cast": [
+      "Amelia Eve",
+      "Island Austin",
+      "Brandon Perea",
+      "Lin Shaye",
+      "Maisie Richardson-Sellers"
+    ],
+    "runtime": 106,
+    "trailer_key": "gXjurDkYnEM"
+  },
+  {
+    "id": 1248832,
+    "tmdb_id": 1248832,
+    "movie_lens_id": 1248832,
+    "title": "Digger",
+    "title_raw": "Digger",
+    "year": 2026,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "overview": "The most powerful man in the world embarks on a frantic mission to prove he is humanity's savior before the disaster he's unleashed destroys everything.",
+    "synopsis": "The most powerful man in the world embarks on a frantic mission to prove he is humanity's savior before the disaster he's unleashed destroys everything.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/1ATXKrIPJyKNwnJ6lcG088Sa6zi.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/u3EtxdmZeiliW98c5Oegk5LIGZa.jpg",
+    "vote_average": 7.5,
+    "vote_count": 272,
+    "director": "Alejandro G. Iñárritu",
+    "cast": [
+      "Tom Cruise",
+      "Riz Ahmed",
+      "John Goodman",
+      "Sandra Hüller",
+      "Michael Stuhlbarg"
+    ],
+    "runtime": 129,
+    "trailer_key": "job8V254NAE"
+  },
+  {
+    "id": 1101412,
+    "tmdb_id": 1101412,
+    "movie_lens_id": 1101412,
+    "title": "Fall 2: Deadpoint",
+    "title_raw": "Fall 2: Deadpoint",
+    "year": 2026,
+    "genres": [
+      "Thriller"
+    ],
+    "overview": "On a perilous climb across Thailand's Mount Kwan, two climbers become trapped thousands of feet above the ground, where vertigo-inducing heights, sheer exposure, and impossible odds turn every moment into a fight for survival.",
+    "synopsis": "On a perilous climb across Thailand's Mount Kwan, two climbers become trapped thousands of feet above the ground, where vertigo-inducing heights, sheer exposure, and impossible odds turn every moment into a fight for survival.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/fgSm5ylwiXbIHn8UbUXDjk9RRu4.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/yBDxqDB29kpH9VojTytjGWBgmdJ.jpg",
+    "vote_average": 7.2,
+    "vote_count": 314,
+    "director": "Michael Spierig",
+    "cast": [
+      "Harriet Slater",
+      "Arsema Thomas",
+      "Tom Brittney",
+      "Virginia Gardner",
+      "Sahajak Boonthanakit"
+    ],
+    "runtime": 98,
+    "trailer_key": "Krs0VDIjhmE"
+  },
+  {
+    "id": 1284046,
+    "tmdb_id": 1284046,
+    "movie_lens_id": 1284046,
+    "title": "Onslaught",
+    "title_raw": "Onslaught",
+    "year": 2026,
+    "genres": [
+      "Action",
+      "Horror",
+      "Thriller"
+    ],
+    "overview": "When a rogue squad of genetically engineered super soldiers break loose in the desert, a badass Army sniper must unleash hell to protect her young daughter.",
+    "synopsis": "When a rogue squad of genetically engineered super soldiers break loose in the desert, a badass Army sniper must unleash hell to protect her young daughter.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/cOGtvhc6Ij9KvzM6jZsfQyg0B0O.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/pmPXXniQlb4EdYY0gVZO90rf54F.jpg",
+    "vote_average": 5.7,
+    "vote_count": 80,
+    "director": "Adam Wingard",
+    "cast": [
+      "Adria Arjona",
+      "Dan Stevens",
+      "Eric Wareheim",
+      "Reginald VelJohnson",
+      "Michael Biehn"
+    ],
+    "runtime": 92,
+    "trailer_key": "AMLCbpM1fRQ"
+  },
+  {
+    "id": 1400837,
+    "tmdb_id": 1400837,
+    "movie_lens_id": 1400837,
+    "title": "Other Mommy",
+    "title_raw": "Other Mommy",
+    "year": 2026,
+    "genres": [
+      "Horror"
+    ],
+    "overview": "Young Bela forms a relationship with a sinister entity in her home that looks uncannily like her own mother, drawing her into a terrifying and increasingly dark world.",
+    "synopsis": "Young Bela forms a relationship with a sinister entity in her home that looks uncannily like her own mother, drawing her into a terrifying and increasingly dark world.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/fGRNCssTRrhYZxNzykGGCoMsAVq.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/ncm7djsVTHQQMX2HEbEVxMUFchG.jpg",
+    "vote_average": 6.1,
+    "vote_count": 42,
+    "director": "Rob Savage",
+    "cast": [
+      "Jessica Chastain",
+      "Arabella Olivia Clark",
+      "Jay Duplass",
+      "Dichen Lachman",
+      "Arian Moayed"
+    ],
+    "runtime": 93,
+    "trailer_key": "-mnTITqqiT0"
+  },
+  {
+    "id": 1423191,
+    "tmdb_id": 1423191,
+    "movie_lens_id": 1423191,
+    "title": "Resident Evil",
+    "title_raw": "Resident Evil",
+    "year": 2026,
+    "genres": [
+      "Horror",
+      "Science Fiction",
+      "Adventure"
+    ],
+    "overview": "Medical courier Bryan unwittingly finds himself fighting for survival as one fateful, horrifying night collapses around him in chaos.",
+    "synopsis": "Medical courier Bryan unwittingly finds himself fighting for survival as one fateful, horrifying night collapses around him in chaos.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/i7UyjfPio0VFHB9rBUZSFyhOoM8.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/3icyRAqgakNcQn6aDVz9libFmBA.jpg",
+    "vote_average": 7.3,
+    "vote_count": 839,
+    "director": "Zach Cregger",
+    "cast": [
+      "Austin Abrams",
+      "Paul Walter Hauser",
+      "Kali Reis",
+      "Zach Cherry",
+      "Johnno Wilson"
+    ],
+    "runtime": 95,
+    "trailer_key": "mNd1gb19A-c"
+  },
+  {
+    "id": 1283515,
+    "tmdb_id": 1283515,
+    "movie_lens_id": 1283515,
+    "title": "Verity",
+    "title_raw": "Verity",
+    "year": 2026,
+    "genres": [
+      "Mystery",
+      "Thriller"
+    ],
+    "overview": "Lowen Ashleigh is hired by Jeremy Crawford to ghostwrite novels for his bestselling author wife Verity, who is unable to finish following an accident. Lowen gradually uncovers Verity's disturbing truths while residing at the Crawfords' home to work.",
+    "synopsis": "Lowen Ashleigh is hired by Jeremy Crawford to ghostwrite novels for his bestselling author wife Verity, who is unable to finish following an accident. Lowen gradually uncovers Verity's disturbing truths while residing at the Crawfords' home to work.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/zPHfsaiMZT1HNz1ZS55iyLKZkFG.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/9qxyrJfjk577ym5WD6HCDmunoyO.jpg",
+    "vote_average": 6.4,
+    "vote_count": 145,
+    "director": "Michael Showalter",
+    "cast": [
+      "Dakota Johnson",
+      "Anne Hathaway",
+      "Josh Hartnett",
+      "Brady Wagner",
+      "Ismael Cruz Cordova"
+    ],
+    "runtime": 114,
+    "trailer_key": "xdPMKhjMSFs"
+  },
+  {
+    "id": 1368337,
+    "tmdb_id": 1368337,
+    "movie_lens_id": 1368337,
+    "title": "The Odyssey",
+    "title_raw": "The Odyssey",
+    "year": 2026,
+    "genres": [
+      "Adventure",
+      "Action",
+      "Fantasy"
+    ],
+    "overview": "Odysseus, the legendary King of Ithaca, embarks on a long and perilous journey home following the Trojan War. Throughout his voyage, he is forced to confront the whims of gods, mythological monsters, and trials that stretch both his cunning and his humanity to the breaking point.",
+    "synopsis": "Odysseus, the legendary King of Ithaca, embarks on a long and perilous journey home following the Trojan War. Throughout his voyage, he is forced to confront the whims of gods, mythological monsters, and trials that stretch both his cunning and his humanity to the breaking point.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/twiVn9oFXOVR0uoYgawyEBlnFu8.jpg",
+    "vote_average": 8.0,
+    "vote_count": 4070,
+    "director": "Christopher Nolan",
+    "cast": [
+      "Matt Damon",
+      "Tom Holland",
+      "Anne Hathaway",
+      "Robert Pattinson",
+      "Himesh Patel"
+    ],
+    "runtime": 173,
+    "trailer_key": "AyIZ9tiiN8I"
+  },
+  {
+    "id": 1003596,
+    "tmdb_id": 1003596,
+    "movie_lens_id": 1003596,
+    "title": "Avengers: Doomsday",
+    "title_raw": "Avengers: Doomsday",
+    "year": 2026,
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Adventure"
+    ],
+    "overview": "Beloved heroes from three distinct universes are set on a deadly collision course and face an existential threat unlike anything they've ever encountered.",
+    "synopsis": "Beloved heroes from three distinct universes are set on a deadly collision course and face an existential threat unlike anything they've ever encountered.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/jzPwsojjFStf5lR5Nm07w2hH56G.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/s4v0UX1anfXm0UvloLsTTJ4v222.jpg",
+    "vote_average": 7.5,
+    "vote_count": 100,
+    "director": "Joe Russo",
+    "cast": [
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Chris Hemsworth",
+      "Pedro Pascal",
+      "Paul Rudd"
+    ],
+    "runtime": 165,
+    "trailer_key": "X1aFkAkFASk"
+  },
+  {
+    "id": 1339713,
+    "tmdb_id": 1339713,
+    "movie_lens_id": 1339713,
+    "title": "Obsession",
+    "title_raw": "Obsession",
+    "year": 2026,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "overview": "After breaking the mysterious \"One Wish Willow\" to win his crush's heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.",
+    "synopsis": "After breaking the mysterious \"One Wish Willow\" to win his crush's heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/5lTZyuBTNOfawsfPT8Q0cIg6qAF.jpg",
+    "vote_average": 8.2,
+    "vote_count": 6013,
+    "director": "Curry Barker",
+    "cast": [
+      "Michael Johnston",
+      "Inde Navarrette",
+      "Cooper Tomlinson",
+      "Megan Lawless",
+      "Andy Richter"
+    ],
+    "runtime": 109,
+    "trailer_key": "gMC8kkwbIQQ"
+  },
+  {
+    "id": 977942,
+    "tmdb_id": 977942,
+    "movie_lens_id": 977942,
+    "title": "The Uprising",
+    "title_raw": "The Uprising",
+    "year": 2026,
+    "genres": [
+      "History",
+      "Drama",
+      "Action"
+    ],
+    "overview": "As war and plague devastate 14th-century England, a humble peasant ignites a rebellion, uniting an army of commoners to defy the King’s might in a desperate fight for justice and survival.",
+    "synopsis": "As war and plague devastate 14th-century England, a humble peasant ignites a rebellion, uniting an army of commoners to defy the King’s might in a desperate fight for justice and survival.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/7TUl15TOsIvndKlgMWTtLgtEzZP.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/y0reRTsewsPh0ePtgvDeLIsb5Wk.jpg",
+    "vote_average": 7.9,
+    "vote_count": 271,
+    "director": "Paul Greengrass",
+    "cast": [
+      "Andrew Garfield",
+      "Jamie Bell",
+      "Stephen Dillane",
+      "Woody Norman",
+      "Tom Hollander"
+    ],
+    "runtime": 128,
+    "trailer_key": "lyhCxZN4Ro8"
+  },
+  {
+    "id": 1153576,
+    "tmdb_id": 1153576,
+    "movie_lens_id": 1153576,
+    "title": "Street Fighter",
+    "title_raw": "Street Fighter",
+    "year": 2026,
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
+    "overview": "In 1993, estranged Street Fighters Ryu and Ken Masters are thrown back into combat when the mysterious Chun-Li recruits them for the next World Warrior Tournament: a brutal clash of fists, fate, and fury. But behind this battle royale lies a deadly conspiracy that forces them to face off against each other and the demons of their past. And if they don't, it's GAME OVER!",
+    "synopsis": "In 1993, estranged Street Fighters Ryu and Ken Masters are thrown back into combat when the mysterious Chun-Li recruits them for the next World Warrior Tournament: a brutal clash of fists, fate, and fury. But behind this battle royale lies a deadly conspiracy that forces them to face off against each other and the demons of their past. And if they don't, it's GAME OVER!",
+    "poster_path": "https://image.tmdb.org/t/p/w500/dJPT2Uf12X6aFg8i5N67NTpIZ9t.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/zDE9hd1SG9695YncbZGjSf7Z9Jk.jpg",
+    "vote_average": 7.5,
+    "vote_count": 100,
+    "director": "Kitao Sakurai",
+    "cast": [
+      "Andrew Koji",
+      "Noah Centineo",
+      "Callina Liang",
+      "Joe Anoa'i",
+      "David Dastmalchian"
+    ],
+    "runtime": 120,
+    "trailer_key": "U6sbm1OaJb8"
+  },
+  {
+    "id": 1377237,
+    "tmdb_id": 1377237,
+    "movie_lens_id": 1377237,
+    "title": "Runner",
+    "title_raw": "Runner",
+    "year": 2026,
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
+    "overview": "A former soldier is thrown into a brutal race against time when a critical medical delivery makes him and his unlikely partner the targets of a ruthless cartel. As the mission spirals into a deadly manhunt, every detour, delay, and bullet pushes them closer to failure. With betrayal closing in from every side, they must survive the chase and deliver their cargo to save the life of a little girl.",
+    "synopsis": "A former soldier is thrown into a brutal race against time when a critical medical delivery makes him and his unlikely partner the targets of a ruthless cartel. As the mission spirals into a deadly manhunt, every detour, delay, and bullet pushes them closer to failure. With betrayal closing in from every side, they must survive the chase and deliver their cargo to save the life of a little girl.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/yBKMAIj7clP42UkFejhGDBBoTpb.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/iXR79oKsLHwLno9jdzxxeFP21sy.jpg",
+    "vote_average": 8.3,
+    "vote_count": 454,
+    "director": "Scott Waugh",
+    "cast": [
+      "Alan Ritchson",
+      "Owen Wilson",
+      "Rodrigo Santoro",
+      "Leila George",
+      "Kate Box"
+    ],
+    "runtime": 97,
+    "trailer_key": "B6Z9MM1LhEA"
+  },
+  {
+    "id": 1281331,
+    "tmdb_id": 1281331,
+    "movie_lens_id": 1281331,
+    "title": "The Social Reckoning",
+    "title_raw": "The Social Reckoning",
+    "year": 2026,
+    "genres": [
+      "Drama",
+      "History",
+      "Thriller"
+    ],
+    "overview": "Frances Haugen, a young Facebook engineer, enlists the help of Jeff Horwitz, a Wall Street Journal reporter, to go on a dangerous journey that ends up blowing the whistle on the social network's most guarded secrets.",
+    "synopsis": "Frances Haugen, a young Facebook engineer, enlists the help of Jeff Horwitz, a Wall Street Journal reporter, to go on a dangerous journey that ends up blowing the whistle on the social network's most guarded secrets.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/nZ8cQbjAQHRuSqwxvuYhOfxyhfW.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/wXTaGcqX3jvdXSKCJAkl5jZyrKp.jpg",
+    "vote_average": 7.5,
+    "vote_count": 37,
+    "director": "Aaron Sorkin",
+    "cast": [
+      "Mikey Madison",
+      "Jeremy Allen White",
+      "Jeremy Strong",
+      "Bill Burr",
+      "Wunmi Mosaku"
+    ],
+    "runtime": 112,
+    "trailer_key": "R8ANzYpaZaY"
+  },
+  {
+    "id": 1375441,
+    "tmdb_id": 1375441,
+    "movie_lens_id": 1375441,
+    "title": "Primetime",
+    "title_raw": "Primetime",
+    "year": 2026,
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "overview": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history. When a high stakes operation goes fatally wrong, his veneered dream of fame curdles into a nightmare of performative justice.",
+    "synopsis": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history. When a high stakes operation goes fatally wrong, his veneered dream of fame curdles into a nightmare of performative justice.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/lmrulvLbmaejTix1YaMxo1oGhH1.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/4E5RVsSUG1A4Adwbqupu5w6kofZ.jpg",
+    "vote_average": 6.8,
+    "vote_count": 103,
+    "director": "Lance Oppenheim",
+    "cast": [
+      "Robert Pattinson",
+      "Merritt Wever",
+      "Skyler Gisondo",
+      "Matthew Maher",
+      "Phoebe Bridgers"
+    ],
+    "runtime": 110,
+    "trailer_key": "C0NZa01qTRU"
+  },
+  {
+    "id": 1458857,
+    "tmdb_id": 1458857,
+    "movie_lens_id": 1458857,
+    "title": "Doing Life",
+    "title_raw": "Doing Life",
+    "year": 2026,
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "overview": "A single mother and an incarcerated man forge an unlikely bond through heartfelt letters, unlocking a door to redemption, hope and love against all odds.",
+    "synopsis": "A single mother and an incarcerated man forge an unlikely bond through heartfelt letters, unlocking a door to redemption, hope and love against all odds.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/5nZVjsCk5tWyyhLGt5U2TxsR85w.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/nDScZ6YR2nfNCeK5bmJ1ujb355b.jpg",
+    "vote_average": 7.7,
+    "vote_count": 81,
+    "director": "Tyler Perry",
+    "cast": [
+      "Naomi Baker",
+      "Jay Reeves",
+      "Tamberla Perry",
+      "Karen Obilom",
+      "Jasmine Sargent"
+    ],
+    "runtime": 112,
+    "trailer_key": "zrOtmDQawas"
+  },
+  {
+    "id": 1400940,
+    "tmdb_id": 1400940,
+    "movie_lens_id": 1400940,
+    "title": "Clayface",
+    "title_raw": "Clayface",
+    "year": 2026,
+    "genres": [
+      "Horror",
+      "Thriller",
+      "Science Fiction"
+    ],
+    "overview": "Matt Hagen's meteoric rise from Gotham street kid to Hollywood leading man is tragically cut short when a local crime boss's actions leave him horribly disfigured. Abandoned by his team and with nothing left, Matt seeks out a cutting edge treatment that miraculously returns him to his former self… but also unexpectedly affects his grip on reality, spiraling him down a destructive path of all-consuming revenge.",
+    "synopsis": "Matt Hagen's meteoric rise from Gotham street kid to Hollywood leading man is tragically cut short when a local crime boss's actions leave him horribly disfigured. Abandoned by his team and with nothing left, Matt seeks out a cutting edge treatment that miraculously returns him to his former self… but also unexpectedly affects his grip on reality, spiraling him down a destructive path of all-consuming revenge.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/5jCpQnWPikggmQZoDp1eAi6BI6w.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/1A7s8zG4PF6YoJrncrTO6N4r0Sx.jpg",
+    "vote_average": 7.5,
+    "vote_count": 100,
+    "director": "James Watkins",
+    "cast": [
+      "Tom Rhys Harries",
+      "Naomi Ackie",
+      "Eddie Marsan",
+      "Max Minghella",
+      "David Dencik"
+    ],
+    "runtime": 108,
+    "trailer_key": "KCR-rz0YfD4"
+  },
+  {
+    "id": 1560520,
+    "tmdb_id": 1560520,
+    "movie_lens_id": 1560520,
+    "title": "Batman: Knightfall Part 1: Knightfall",
+    "title_raw": "Batman: Knightfall Part 1: Knightfall",
+    "year": 2026,
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "overview": "Arkham Asylum has been destroyed, and all its inmates have been unleashed upon Gotham City. As Batman races to round up some of his greatest enemies, he is pushed to his physical and mental limits and into a final confrontation with a new threat: the man called Bane!",
+    "synopsis": "Arkham Asylum has been destroyed, and all its inmates have been unleashed upon Gotham City. As Batman races to round up some of his greatest enemies, he is pushed to his physical and mental limits and into a final confrontation with a new threat: the man called Bane!",
+    "poster_path": "https://image.tmdb.org/t/p/w500/360qdtu2hLnqMu8SVHMywn420w1.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/caBIySpwuFi2i7ynvHIlnxJLOdN.jpg",
+    "vote_average": 9.1,
+    "vote_count": 438,
+    "director": "Jeff Wamester",
+    "cast": [
+      "Anson Mount",
+      "Michael Mando",
+      "Pablo Schreiber",
+      "Jeff Bennett",
+      "Luis Bermudez"
+    ],
+    "runtime": 79,
+    "trailer_key": "90HAqMk7qv0"
+  },
+  {
+    "id": 980431,
+    "tmdb_id": 980431,
+    "movie_lens_id": 980431,
+    "title": "Avatar Aang: The Last Airbender",
+    "title_raw": "Avatar Aang: The Last Airbender",
+    "year": 2026,
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Fantasy",
+      "Action"
+    ],
+    "overview": "Avatar Aang, the world's last Airbender, learns of an ancient power that could save his culture from extinction. With the help of his friends, he embarks on a global quest to find it before it falls into the wrong hands and threatens to upend the peace they sacrificed everything to achieve.",
+    "synopsis": "Avatar Aang, the world's last Airbender, learns of an ancient power that could save his culture from extinction. With the help of his friends, he embarks on a global quest to find it before it falls into the wrong hands and threatens to upend the peace they sacrificed everything to achieve.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/3sgnSfNT27Bx5O5ukr7B26mhEQq.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/ezbrL1dMymKQZw7mDEWa2ZTzN7d.jpg",
+    "vote_average": 9.1,
+    "vote_count": 1290,
+    "director": "Lauren Montgomery",
+    "cast": [
+      "Eric Nam",
+      "Dave Bautista",
+      "Jessica Matten",
+      "Román Zaragoza",
+      "Steven Yeun"
+    ],
+    "runtime": 99,
+    "trailer_key": "7b20GRFZBFE"
+  },
+  {
+    "id": 1007757,
+    "tmdb_id": 1007757,
+    "movie_lens_id": 1007757,
+    "title": "Swapped",
+    "title_raw": "Swapped",
+    "year": 2026,
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Family",
+      "Fantasy"
+    ],
+    "overview": "A small woodland creature and a majestic bird, two natural sworn enemies of the Valley, magically trade places and set off on an adventure of a lifetime to switch back. Their journey soon uncovers a greater threat—one that could endanger not only their species, but the entire valley they call home.",
+    "synopsis": "A small woodland creature and a majestic bird, two natural sworn enemies of the Valley, magically trade places and set off on an adventure of a lifetime to switch back. Their journey soon uncovers a greater threat—one that could endanger not only their species, but the entire valley they call home.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/tHhxWxge06goXU6ZQH1hj7vK8Hd.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/zMwhWailP1WY7sb6AoE6b8ugoy.jpg",
+    "vote_average": 8.9,
+    "vote_count": 2233,
+    "director": "Nathan Greno",
+    "cast": [
+      "Michael B. Jordan",
+      "Juno Temple",
+      "Tracy Morgan",
+      "Cedric the Entertainer",
+      "Justina Machado"
+    ],
+    "runtime": 102,
+    "trailer_key": "glgmAwRDP8s"
+  },
+  {
+    "id": 1632181,
+    "tmdb_id": 1632181,
+    "movie_lens_id": 1632181,
+    "title": "Accidental Partners",
+    "title_raw": "Socias por accidente",
+    "year": 2026,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "overview": "Two women discover they were both scammed by the same man (who also got them pregnant). They form an alliance to take revenge.",
+    "synopsis": "Two women discover they were both scammed by the same man (who also got them pregnant). They form an alliance to take revenge.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/j0CIVzeR7hRAPBPGR54qDZoOQpp.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/iCML6fBe3X0y06P33bM7dyYXPKZ.jpg",
+    "vote_average": 8.8,
+    "vote_count": 393,
+    "director": "Ihtzi Hurtado",
+    "cast": [
+      "Angelique Boyer",
+      "Bárbara de Regil",
+      "Diego Klein",
+      "Lucía Uribe",
+      "Isabella Camil"
+    ],
+    "runtime": 110,
+    "trailer_key": "tsjsPgnCM2U"
+  },
+  {
+    "id": 1311031,
+    "tmdb_id": 1311031,
+    "movie_lens_id": 1311031,
+    "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+    "title_raw": "劇場版「鬼滅の刃」無限城編 第一章 猗窩座再来",
+    "year": 2025,
+    "genres": [
+      "Animation",
+      "Action",
+      "Fantasy"
+    ],
+    "overview": "The Demon Slayer Corps are drawn into the Infinity Castle, where Tanjiro, Nezuko, and the Hashira face terrifying Upper Rank demons in a desperate fight as the final battle against Muzan Kibutsuji begins.",
+    "synopsis": "The Demon Slayer Corps are drawn into the Infinity Castle, where Tanjiro, Nezuko, and the Hashira face terrifying Upper Rank demons in a desperate fight as the final battle against Muzan Kibutsuji begins.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/1RgPyOhN4DRs225BGTlHJqCudII.jpg",
+    "vote_average": 8.8,
+    "vote_count": 2263,
+    "director": "Haruo Sotozaki",
+    "cast": [
+      "Natsuki Hanae",
+      "Takahiro Sakurai",
+      "Akira Ishida",
+      "Hiro Shimono",
+      "Yoshimasa Hosoya"
+    ],
+    "runtime": 156,
+    "trailer_key": "EpAlHmuA2YM"
+  },
+  {
+    "id": 1621552,
+    "tmdb_id": 1621552,
+    "movie_lens_id": 1621552,
+    "title": "Facing El Chapo",
+    "title_raw": "La captura",
+    "year": 2026,
+    "genres": [
+      "Crime",
+      "Action",
+      "Thriller"
+    ],
+    "overview": "Two Mexican officers must survive the final hours of their shift after crossing a ruthless cartel boss.",
+    "synopsis": "Two Mexican officers must survive the final hours of their shift after crossing a ruthless cartel boss.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/alpf5v4UqSFawPmG9RX03Or4BDk.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/c4U96GrPRfnNrS01mBtqnocvlLJ.jpg",
+    "vote_average": 8.8,
+    "vote_count": 893,
+    "director": "Chava Cartas",
+    "cast": [
+      "Alfonso Herrera",
+      "Noé Hernández",
+      "Hector Kotsifakis",
+      "Paola Fernández",
+      "Gerardo Trejoluna"
+    ],
+    "runtime": 91,
+    "trailer_key": "Rk0efhpa-5Y"
+  },
+  {
+    "id": 687163,
+    "tmdb_id": 687163,
+    "movie_lens_id": 687163,
+    "title": "Project Hail Mary",
+    "title_raw": "Project Hail Mary",
+    "year": 2026,
+    "genres": [
+      "Science Fiction",
+      "Adventure"
+    ],
+    "overview": "Science teacher Ryland Grace wakes up on a spaceship light years from home with no recollection of who he is or how he got there. As his memory returns, he begins to uncover his mission: solve the riddle of the mysterious substance causing the sun to die out. He must call on his scientific knowledge and unorthodox ideas to save everything on Earth from extinction.",
+    "synopsis": "Science teacher Ryland Grace wakes up on a spaceship light years from home with no recollection of who he is or how he got there. As his memory returns, he begins to uncover his mission: solve the riddle of the mysterious substance causing the sun to die out. He must call on his scientific knowledge and unorthodox ideas to save everything on Earth from extinction.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/iOb2fjXLbpJgyQXe46n1WtGCnaa.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",
+    "vote_average": 8.6,
+    "vote_count": 8223,
+    "director": "Phil Lord",
+    "cast": [
+      "Ryan Gosling",
+      "Sandra Hüller",
+      "James Ortiz",
+      "Lionel Boyce",
+      "Milana Vayntrub"
+    ],
+    "runtime": 157,
+    "trailer_key": "NKYea63tQmI"
+  },
+  {
+    "id": 936075,
+    "tmdb_id": 936075,
+    "movie_lens_id": 936075,
+    "title": "Michael",
+    "title_raw": "Michael",
+    "year": 2026,
+    "genres": [
+      "Music",
+      "Drama"
+    ],
+    "overview": "The story of Michael Jackson, one of the most influential artists the world has ever known, and his life beyond the music. His journey from the discovery of his extraordinary talent as the lead of the Jackson Five, to the visionary artist whose creative ambition fueled a relentless pursuit to become the biggest entertainer in the world, highlighting both his life off-stage and some of the most iconic performances from his early solo career.",
+    "synopsis": "The story of Michael Jackson, one of the most influential artists the world has ever known, and his life beyond the music. His journey from the discovery of his extraordinary talent as the lead of the Jackson Five, to the visionary artist whose creative ambition fueled a relentless pursuit to become the biggest entertainer in the world, highlighting both his life off-stage and some of the most iconic performances from his early solo career.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/dueFqKLvjftnELZaGYwY7xinfaI.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/ufSwlnECLoUbBjPrFqEQcWBzHwc.jpg",
+    "vote_average": 8.6,
+    "vote_count": 4521,
+    "director": "Antoine Fuqua",
+    "cast": [
+      "Jaafar Jackson",
+      "Colman Domingo",
+      "Nia Long",
+      "Juliano Krue Valdi",
+      "KeiLyn Durrel Jones"
+    ],
+    "runtime": 128,
+    "trailer_key": "k-YAcjaLuSI"
+  },
+  {
+    "id": 1232449,
+    "tmdb_id": 1232449,
+    "movie_lens_id": 1232449,
+    "title": "Young Hearts",
+    "title_raw": "Young Hearts",
+    "year": 2024,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "overview": "14-year-old Elias increasingly feels like an outsider in his village. When he meets his new neighbour of the same age, Alexander, Elias is confronted with his burgeoning sexuality.",
+    "synopsis": "14-year-old Elias increasingly feels like an outsider in his village. When he meets his new neighbour of the same age, Alexander, Elias is confronted with his burgeoning sexuality.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/iGCtYxfuvXfy0BD5m6p7vKuPOxS.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/3HaqAPZ0C8n6Hd5T86U53yJlBAN.jpg",
+    "vote_average": 8.6,
+    "vote_count": 325,
+    "director": "Anthony Schatteman",
+    "cast": [
+      "Lou Goossens",
+      "Marius De Saeger",
+      "Geert Van Rampelberg",
+      "Emilie De Roo",
+      "Dirk van Dijck"
+    ],
+    "runtime": 99,
+    "trailer_key": "ijaLan082S8"
+  },
+  {
+    "id": 389,
+    "tmdb_id": 389,
+    "movie_lens_id": 389,
+    "title": "12 Angry Men",
+    "title_raw": "12 Angry Men",
+    "year": 1957,
+    "genres": [
+      "Drama"
+    ],
+    "overview": "The defense and the prosecution have rested and the jury is filing into the jury room to decide if a young Spanish-American is guilty or innocent of murdering his father. What begins as an open and shut case soon becomes a mini-drama of each of the jurors' prejudices and preconceptions about the trial, the accused, and each other.",
+    "synopsis": "The defense and the prosecution have rested and the jury is filing into the jury room to decide if a young Spanish-American is guilty or innocent of murdering his father. What begins as an open and shut case soon becomes a mini-drama of each of the jurors' prejudices and preconceptions about the trial, the accused, and each other.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/zhG3vKWyDRaZYoaww1UVAi29T9h.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/qqHQsStV6exghCM7zbObuYBiYxw.jpg",
+    "vote_average": 8.6,
+    "vote_count": 10459,
+    "director": "Sidney Lumet",
+    "cast": [
+      "Martin Balsam",
+      "John Fiedler",
+      "Lee J. Cobb",
+      "E.G. Marshall",
+      "Jack Klugman"
+    ],
+    "runtime": 97,
+    "trailer_key": "TEN-2uTi2c0"
+  },
+  {
+    "id": 240,
+    "tmdb_id": 240,
+    "movie_lens_id": 240,
+    "title": "The Godfather Part II",
+    "title_raw": "The Godfather Part II",
+    "year": 1974,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "overview": "In the continuing saga of the Corleone crime family, a young Vito Corleone grows up in Sicily and in 1910s New York. In the 1950s, Michael Corleone attempts to expand the family business into Las Vegas, Hollywood and Cuba.",
+    "synopsis": "In the continuing saga of the Corleone crime family, a young Vito Corleone grows up in Sicily and in 1910s New York. In the 1950s, Michael Corleone attempts to expand the family business into Las Vegas, Hollywood and Cuba.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/8a1lJs7mFyGhGhZZDT1azJUoQiZ.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/pGzqRKrYeK4LogoysNro0vG8d8N.jpg",
+    "vote_average": 8.6,
+    "vote_count": 14441,
+    "director": "Francis Ford Coppola",
+    "cast": [
+      "Al Pacino",
+      "Robert Duvall",
+      "Diane Keaton",
+      "Robert De Niro",
+      "John Cazale"
+    ],
+    "runtime": 202,
+    "trailer_key": "9O1Iy9od7-A"
+  },
+  {
+    "id": 1630423,
+    "tmdb_id": 1630423,
+    "movie_lens_id": 1630423,
+    "title": "My Dearest Assassin",
+    "title_raw": "เลือดรักนักฆ่า",
+    "year": 2026,
+    "genres": [
+      "Action",
+      "Drama",
+      "Romance"
+    ],
+    "overview": "Hunted for her rare blood type, a caged woman vows to fight alongside the assassin she loves to protect their future when an old enemy resurfaces.",
+    "synopsis": "Hunted for her rare blood type, a caged woman vows to fight alongside the assassin she loves to protect their future when an old enemy resurfaces.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/ul4dQcA68mtSx8J56N5gEcaCCtP.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/xA6AM5MvEkieZKlv1Tn3sN23I7i.jpg",
+    "vote_average": 8.6,
+    "vote_count": 309,
+    "director": "Taweewat Wantha",
+    "cast": [
+      "Pimchanok Luevisadpaibul",
+      "Thanapob Leeratanakachorn",
+      "Sivakorn Adulsuttikul",
+      "Chartayodom Hiranyasthiti",
+      "Theerachai Wimolchaireuk"
+    ],
+    "runtime": 128,
+    "trailer_key": null
+  },
+  {
+    "id": 1218925,
+    "tmdb_id": 1218925,
+    "movie_lens_id": 1218925,
+    "title": "Chainsaw Man - The Movie: Reze Arc",
+    "title_raw": "劇場版 チェンソーマン レゼ篇",
+    "year": 2025,
+    "genres": [
+      "Animation",
+      "Action",
+      "Romance",
+      "Fantasy"
+    ],
+    "overview": "In a brutal war between devils, hunters, and secret enemies, a mysterious girl named Reze has stepped into Denji's world, and he faces his deadliest battle yet, fueled by love in a world where survival knows no rules.",
+    "synopsis": "In a brutal war between devils, hunters, and secret enemies, a mysterious girl named Reze has stepped into Denji's world, and he faces his deadliest battle yet, fueled by love in a world where survival knows no rules.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/pHyxb2RV5wLlboAwm9ZJ9qTVEDw.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/gqTz24ZRsCP6AKjARmEivY7m0cK.jpg",
+    "vote_average": 8.5,
+    "vote_count": 1235,
+    "director": "Tatsuya Yoshihara",
+    "cast": [
+      "Kikunosuke Toya",
+      "Shiori Izawa",
+      "Tomori Kusunoki",
+      "Reina Ueda",
+      "Shogo Sakata"
+    ],
+    "runtime": 100,
+    "trailer_key": "GJ1jrCnm-t8"
+  },
+  {
+    "id": 497,
+    "tmdb_id": 497,
+    "movie_lens_id": 497,
+    "title": "The Green Mile",
+    "title_raw": "The Green Mile",
+    "year": 1999,
+    "genres": [
+      "Fantasy",
+      "Drama",
+      "Crime"
+    ],
+    "overview": "A supernatural tale set on death row in a Southern prison, where gentle giant John Coffey possesses the mysterious power to heal people's ailments. When the cell block's head guard, Paul Edgecomb, recognizes Coffey's miraculous gift, he tries desperately to help stave off the condemned man's execution.",
+    "synopsis": "A supernatural tale set on death row in a Southern prison, where gentle giant John Coffey possesses the mysterious power to heal people's ailments. When the cell block's head guard, Paul Edgecomb, recognizes Coffey's miraculous gift, he tries desperately to help stave off the condemned man's execution.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/8VG8fDNiy50H4FedGwdSVUPoaJe.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/amZavErrjrdgDwhsIdpWxHNenIx.jpg",
+    "vote_average": 8.5,
+    "vote_count": 19935,
+    "director": "Frank Darabont",
+    "cast": [
+      "Tom Hanks",
+      "David Morse",
+      "Bonnie Hunt",
+      "Michael Clarke Duncan",
+      "James Cromwell"
+    ],
+    "runtime": 189,
+    "trailer_key": "Bg7epsq0OIQ"
+  },
+  {
+    "id": 1228834,
+    "tmdb_id": 1228834,
+    "movie_lens_id": 1228834,
+    "title": "The Fix",
+    "title_raw": "The Fix",
+    "year": 2026,
+    "genres": [
+      "Action",
+      "Thriller"
+    ],
+    "overview": "Disillusioned by the end of the war in Afghanistan, a group of disgraced, war-torn ex-CIA operatives set out to Tehran to take down a life-changing score.",
+    "synopsis": "Disillusioned by the end of the war in Afghanistan, a group of disgraced, war-torn ex-CIA operatives set out to Tehran to take down a life-changing score.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/yopXjun3ICFfJci2ukcEzceZjUs.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/yT8EkAvEkJDFeAxK7s7HlIPELRT.jpg",
+    "vote_average": 6.8,
+    "vote_count": 53,
+    "director": "Guy Moshe",
+    "cast": [
+      "Zachary Levi",
+      "Liam Neeson",
+      "Wes Chatham",
+      "Titus Welliver",
+      "Navid Negahban"
+    ],
+    "runtime": 142,
+    "trailer_key": "l5Luvr9TRRc"
+  },
+  {
+    "id": 1751701,
+    "tmdb_id": 1751701,
+    "movie_lens_id": 1751701,
+    "title": "After Impact",
+    "title_raw": "After Impact",
+    "year": 2026,
+    "genres": [
+      "Science Fiction",
+      "Drama",
+      "Thriller"
+    ],
+    "overview": "After losing his father, Ethan Nichols inherits one of the largest greenhouses in the country, just as the world faces a devastating threat from an approaching asteroid. As society begins to unravel, Ethan grapples with personal betrayal, overwhelming loneliness, and the growing fear that survival may come at the cost of his humanity. Seeking refuge in his family’s bunker, Ethan endures the harsh aftermath of the impact, wrestling with physical injury and emotional despair. When a faint voice crackles over his radio, Ethan discovers he's not as alone as he believed.",
+    "synopsis": "After losing his father, Ethan Nichols inherits one of the largest greenhouses in the country, just as the world faces a devastating threat from an approaching asteroid. As society begins to unravel, Ethan grapples with personal betrayal, overwhelming loneliness, and the growing fear that survival may come at the cost of his humanity. Seeking refuge in his family’s bunker, Ethan endures the harsh aftermath of the impact, wrestling with physical injury and emotional despair. When a faint voice crackles over his radio, Ethan discovers he's not as alone as he believed.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/yzDuAQCY2n6zzOlBkn6JzhLhY3k.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/k22XyPbce7zvzzf5OnT4uaY8ZD1.jpg",
+    "vote_average": 6.0,
+    "vote_count": 25,
+    "director": "Michiel Rensen",
+    "cast": [
+      "Michiel Rensen",
+      "Maxie Li",
+      "Riki Antonievich",
+      "Will Clague",
+      "Stephanie Ramlose"
+    ],
+    "runtime": 95,
+    "trailer_key": "Af8D6sRDyxo"
+  },
+  {
+    "id": 1712451,
+    "tmdb_id": 1712451,
+    "movie_lens_id": 1712451,
+    "title": "Resident Dead",
+    "title_raw": "Resident Dead",
+    "year": 2026,
+    "genres": [
+      "Horror"
+    ],
+    "overview": "A man keeping his recently zombified daughter secure in hopes of a cure is tasked with delivering an unknown package through hordes of undead. If he succeeds, he will be given a cure for his daughter. If he fails, or opens the package, they will both be killed.",
+    "synopsis": "A man keeping his recently zombified daughter secure in hopes of a cure is tasked with delivering an unknown package through hordes of undead. If he succeeds, he will be given a cure for his daughter. If he fails, or opens the package, they will both be killed.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/yX8ziNTZ5aOszJ3l4R3BlT2gBIa.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/yKx5gYrYgakKZuUWAsuFDStBroy.jpg",
+    "vote_average": 5.9,
+    "vote_count": 7,
+    "director": "Ryan Ebert",
+    "cast": [
+      "John Wells",
+      "Isabel Ramirez",
+      "Thandiwe McMillan",
+      "Hamid-Reza Benjamin Thompson",
+      "Jarod Brock"
+    ],
+    "runtime": 89,
+    "trailer_key": "M1vupS1Tzfg"
+  },
+  {
+    "id": 460458,
+    "tmdb_id": 460458,
+    "movie_lens_id": 460458,
+    "title": "Resident Evil: Welcome to Raccoon City",
+    "title_raw": "Resident Evil: Welcome to Raccoon City",
+    "year": 2021,
+    "genres": [
+      "Action",
+      "Horror",
+      "Science Fiction"
+    ],
+    "overview": "Once the booming home of pharmaceutical giant Umbrella Corporation, Raccoon City is now a dying Midwestern town. The company’s exodus left the city a wasteland…with great evil brewing below the surface. When that evil is unleashed, the townspeople are forever…changed…and a small group of survivors must work together to uncover the truth behind Umbrella and make it through the night.",
+    "synopsis": "Once the booming home of pharmaceutical giant Umbrella Corporation, Raccoon City is now a dying Midwestern town. The company’s exodus left the city a wasteland…with great evil brewing below the surface. When that evil is unleashed, the townspeople are forever…changed…and a small group of survivors must work together to uncover the truth behind Umbrella and make it through the night.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/bArhvjRHl535XMaSh9VjInF2mSZ.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/wYtEvBmpBRXPdwGgr1gcWiwJSI7.jpg",
+    "vote_average": 5.9,
+    "vote_count": 2868,
+    "director": "Johannes Roberts",
+    "cast": [
+      "Kaya Scodelario",
+      "Hannah John-Kamen",
+      "Robbie Amell",
+      "Tom Hopper",
+      "Avan Jogia"
+    ],
+    "runtime": 107,
+    "trailer_key": "IQqqAWMIIAQ"
+  },
+  {
+    "id": 1204680,
+    "tmdb_id": 1204680,
+    "movie_lens_id": 1204680,
+    "title": "Coyote vs. Acme",
+    "title_raw": "Coyote vs. Acme",
+    "year": 2026,
+    "genres": [
+      "Comedy",
+      "Adventure",
+      "Family"
+    ],
+    "overview": "After Acme products fail him one too many times in his dogged pursuit of the Roadrunner, Wile E. Coyote decides to hire a billboard lawyer to sue the Acme Corporation.",
+    "synopsis": "After Acme products fail him one too many times in his dogged pursuit of the Roadrunner, Wile E. Coyote decides to hire a billboard lawyer to sue the Acme Corporation.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/kYDCl2y0VPvhT5eYWbMRInPoB03.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/viZqGq9TNvQ5uXSD4ahg2RpRONT.jpg",
+    "vote_average": 7.5,
+    "vote_count": 708,
+    "director": "Dave Green",
+    "cast": [
+      "Will Forte",
+      "Lana Condor",
+      "John Cena",
+      "Tone Bell",
+      "Martha Kelly"
+    ],
+    "runtime": 103,
+    "trailer_key": "kMsiD1Nky5I"
+  },
+  {
+    "id": 1294189,
+    "tmdb_id": 1294189,
+    "movie_lens_id": 1294189,
+    "title": "The Mongoose",
+    "title_raw": "The Mongoose",
+    "year": 2026,
+    "genres": [
+      "Action",
+      "Thriller"
+    ],
+    "overview": "A falsely accused war hero with nothing to lose leads police on an epic televised cross-country car chase, helped by members of his former Special Forces Army battalion and closely monitored by a fascinated public rooting for his safe getaway.",
+    "synopsis": "A falsely accused war hero with nothing to lose leads police on an epic televised cross-country car chase, helped by members of his former Special Forces Army battalion and closely monitored by a fascinated public rooting for his safe getaway.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/eSS5mvSG84UUuvtbHel5Yu3Wik4.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/iRIhPqqoUHiFBxn8oYf3gCQnaKk.jpg",
+    "vote_average": 7.5,
+    "vote_count": 100,
+    "director": "Mark Vanselow",
+    "cast": [
+      "Liam Neeson",
+      "Marisa Tomei",
+      "Ving Rhames",
+      "Michael Chiklis",
+      "Brett Tucker"
+    ],
+    "runtime": 99,
+    "trailer_key": "aHrMFtt40_Q"
+  },
+  {
+    "id": 1101383,
+    "tmdb_id": 1101383,
+    "movie_lens_id": 1101383,
+    "title": "The End of Oak Street",
+    "title_raw": "The End of Oak Street",
+    "year": 2026,
+    "genres": [
+      "Science Fiction",
+      "Mystery",
+      "Thriller"
+    ],
+    "overview": "After a mysterious cosmic event rips Oak Street from suburbia and transports their neighborhood to someplace unknown, the Platt family soon discovers that their very survival depends on them sticking together as they navigate their now unrecognizable surroundings.",
+    "synopsis": "After a mysterious cosmic event rips Oak Street from suburbia and transports their neighborhood to someplace unknown, the Platt family soon discovers that their very survival depends on them sticking together as they navigate their now unrecognizable surroundings.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/fYXqpgPmHMphSF2W30GbTeJVIa5.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/b9q9VmbXDvJmTziRqkwdEmFdwhr.jpg",
+    "vote_average": 7.1,
+    "vote_count": 1948,
+    "director": "David Robert Mitchell",
+    "cast": [
+      "Anne Hathaway",
+      "Ewan McGregor",
+      "Maisy Stella",
+      "Christian Convery",
+      "Jordan Alexa Davis"
+    ],
+    "runtime": 100,
+    "trailer_key": "u4tgctWuHc0"
+  },
+  {
+    "id": 1084244,
+    "tmdb_id": 1084244,
+    "movie_lens_id": 1084244,
+    "title": "Toy Story 5",
+    "title_raw": "Toy Story 5",
+    "year": 2026,
+    "genres": [
+      "Animation",
+      "Family",
+      "Comedy",
+      "Adventure"
+    ],
+    "overview": "When Bonnie receives a Lilypad tablet as a gift and becomes obsessed, Buzz, Woody, Jessie and the rest of the gang's jobs become exponentially harder when they have to go head to head with the all-new threat to playtime.",
+    "synopsis": "When Bonnie receives a Lilypad tablet as a gift and becomes obsessed, Buzz, Woody, Jessie and the rest of the gang's jobs become exponentially harder when they have to go head to head with the all-new threat to playtime.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/sfQtVlIHljToOwYjhe21KPGzZWK.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/qjTqY5coNiz6sVtPng40IzltsoN.jpg",
+    "vote_average": 8.3,
+    "vote_count": 2547,
+    "director": "Andrew Stanton",
+    "cast": [
+      "Joan Cusack",
+      "Tom Hanks",
+      "Tim Allen",
+      "Conan O'Brien",
+      "Scarlett Spears"
+    ],
+    "runtime": 102,
+    "trailer_key": "QftAW9TTmuQ"
+  },
+  {
+    "id": 1232569,
+    "tmdb_id": 1232569,
+    "movie_lens_id": 1232569,
+    "title": "Pinocchio: Unstrung",
+    "title_raw": "Pinocchio: Unstrung",
+    "year": 2026,
+    "genres": [
+      "Horror",
+      "Fantasy",
+      "Mystery"
+    ],
+    "overview": "Influenced by a sinister Cricket and created by Geppetto, Pinocchio launches a violent crusade to carve himself into a real boy like his brother James, one piece at a time.",
+    "synopsis": "Influenced by a sinister Cricket and created by Geppetto, Pinocchio launches a violent crusade to carve himself into a real boy like his brother James, one piece at a time.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/eUJXk3bTvLBi5Zcb0BCedZU7lVL.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/vgZDb7kmaxP24cFbt1KJdMLlHFZ.jpg",
+    "vote_average": 6.5,
+    "vote_count": 127,
+    "director": "Rhys Frake-Waterfield",
+    "cast": [
+      "Jude Evan Lloyd",
+      "Cameron Bell",
+      "Richard Brake",
+      "Jessica Balmer",
+      "Jack Art Gray"
+    ],
+    "runtime": 82,
+    "trailer_key": "Y4lZewE6JMI"
+  },
+  {
+    "id": 1032863,
+    "tmdb_id": 1032863,
+    "movie_lens_id": 1032863,
+    "title": "The Love Hypothesis",
+    "title_raw": "The Love Hypothesis",
+    "year": 2026,
+    "genres": [
+      "Romance",
+      "Comedy"
+    ],
+    "overview": "Olive Smith, a biology PhD candidate, and Dr. Adam Carlsen, a hotshot professor and well-known tyrant, enter into a fake relationship, seeing each of their carefully calculated theories on love get thrown into chaos.",
+    "synopsis": "Olive Smith, a biology PhD candidate, and Dr. Adam Carlsen, a hotshot professor and well-known tyrant, enter into a fake relationship, seeing each of their carefully calculated theories on love get thrown into chaos.",
+    "poster_path": "https://image.tmdb.org/t/p/w500/vfZxVHextAGC70zrNhS8lsROqP1.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original/o7Oy9Gbx1CCyaweL8xUhtMW4Puq.jpg",
+    "vote_average": 8.0,
+    "vote_count": 544,
+    "director": "Claire Scanlon",
+    "cast": [
+      "Lili Reinhart",
+      "Tom Bateman",
+      "Rachel Marsh",
+      "Jaboukie Young-White",
+      "Nicholas Duvernay"
+    ],
+    "runtime": 112,
+    "trailer_key": "xwdamnfS6IM"
+  }
+]

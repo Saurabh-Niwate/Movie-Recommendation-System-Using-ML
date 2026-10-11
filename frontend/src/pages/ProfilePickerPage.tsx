@@ -30,7 +30,7 @@ export const ProfilePickerPage: React.FC = () => {
             CineMatch
           </span>
           <span className="text-[11px] uppercase font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-400 border border-zinc-700">
-            Furtado & Singh (2020)
+            Personalized Cinema
           </span>
         </div>
       </header>
@@ -41,7 +41,7 @@ export const ProfilePickerPage: React.FC = () => {
           Who&apos;s watching?
         </h1>
         <p className="text-zinc-400 text-sm sm:text-base max-w-lg mx-auto mb-12">
-          Choose a persona to explore personalized collaborative filtering models or test cold-start onboarding.
+          Choose a profile to start exploring personalized film recommendations.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 md:gap-10">
@@ -75,7 +75,7 @@ export const ProfilePickerPage: React.FC = () => {
                     </div>
                   ) : (
                     <div className="absolute top-2 right-2 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-zinc-900/90 text-zinc-300 border border-zinc-700">
-                      Cluster {profile.id === 'neel' ? '1' : '2'}
+                      Taste Profile {profile.id === 'neel' ? '1' : '2'}
                     </div>
                   )}
 
@@ -122,7 +122,7 @@ export const ProfilePickerPage: React.FC = () => {
       {/* Footer Info */}
       <footer className="text-center text-xs text-zinc-600 pb-4 flex items-center justify-center gap-2">
         <Film className="w-4 h-4 text-zinc-500" />
-        <span>MovieLens 1M Recommender System • Fast SGD Funk-SVD & Item-KNN Adjusted Cosine</span>
+        <span>CineMatch • Next-Generation Personalized Movie Discovery</span>
       </footer>
     </div>
   );

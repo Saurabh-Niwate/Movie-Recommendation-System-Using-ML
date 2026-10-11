@@ -1,128 +1,113 @@
-# Project: CineMatch Recommender System
-
-Full-stack movie recommendation system replicating Furtado & Singh (2020) with Item-KNN (Adjusted Cosine & shrinkage), Funk-SVD (fast SGD & closed-form online fold-in), Association Rules (lift), PostgreSQL database, layered FastAPI backend, and Netflix-clone React/TypeScript frontend.
+# Project: CineMatch Movie Recommendation System
 
 ## Architecture
+CineMatch is a full-stack ML-powered personalized movie recommendation system featuring a cyber-cinematic dark user interface, resilient dual-database persistence, offline TMDB media generation, and a real-time recommendation engine with sub-50ms analytical Ridge regression fold-in.
 
 ```
-                                 [ Browser Client ]
-                           React 18 + TS + Tailwind CSS
-                         (Browse, Onboarding, Model Lab)
-                                        │
-                                        ▼ HTTP REST (JSON)
-                         [ FastAPI Application Server ]
-                  ┌─────────────────────┼─────────────────────┐
-                  ▼                     ▼                     ▼
-          [ Router Layer ]      [ Service Layer ]     [ Repository Layer ]
-          - /api/v1/profiles    - RecommendationEngine - PostgreSQL Engine
-          - /api/v1/movies      - FoldInService        - cinematch.movies
-          - /api/v1/ratings     - ModelLabService      - cinematch.profiles
-          - /api/v1/model-lab   - TMDBClient Fallback  - cinematch.ratings
-                  │                     │                     │
-                  ▼                     ▼                     ▼
-         [ Model Registry ]    [ In-Memory Caching ]   [ PostgreSQL 18 ]
-         - FunkSVD (Ridge)     - TTLCache (60s)        - Dedicated schema:
-         - ItemKNN (Cos/Shrink)- Profile invalidation    `cinematch`
-         - AssociationRules    - Immediate refetch
-         - BayesianPopularity
-                  │
-                  ▼ Reads / Writes
-       [ artifacts/v1/ Storage ]
-       - id_maps.json, funk_svd.npz, item_knn.npz,
-       - associations.parquet, profiles.json, metrics.json
+┌────────────────────────────────────────────────────────────────────────┐
+│                          Frontend (React 18 + Vite)                    │
+│  7 Stitch Screens: 01 Watchlist | 02 Feed | 03 Auth | 04 Rankings     │
+│                    05 Onboarding | 06 Pre-SignIn Home | 07 Profile     │
+│  Design System: Material 3 Cyber Dark, Plus Jakarta Sans, Inter        │
+└────────────────────────────────────┬───────────────────────────────────┘
+                                     │ HTTP / REST (/api/v1)
+┌────────────────────────────────────▼───────────────────────────────────┐
+│                          Backend (FastAPI)                             │
+│  Routers: profiles, movies, ratings, recommendations, watchlist, tmdb  │
+│  Cold-Start Gating: 6-movie rating threshold (403 Forbidden until met)  │
+│  Fold-in Engine: Sub-50ms Ridge regression update + cache invalidation  │
+└───────────────┬────────────────────────────────────────┬───────────────┘
+                │                                        │
+┌───────────────▼───────────────┐        ┌───────────────▼───────────────┐
+│     Resilient Database Layer   │        │     TMDB & Media Service      │
+│  Primary: PostgreSQL (port 5432)│        │  Live TMDB API (Bearer / Key) │
+│  Fallback: SQLite (cinematch.db)│       │  Deterministic SVG Generator  │
+│  Schema: schema_translate_map │        │  (Posters, Backdrops, Synopsis)│
+│  Auto-seed: 24 starter movies, │        └───────────────────────────────┘
+│  Neel (18 ratings), Nitin (14) │
+└────────────────────────────────┘
 ```
 
 ## Feature Inventory
 | # | Feature | Description | Milestone | Source |
 |---|---------|-------------|-----------|--------|
-| F1 | MovieLens 1M Data Pipeline | Download, contiguous 0-based user/item indexing, temporal 80/20 train/test + 10% val split, title cleaning | M1 | R1 |
-| F2 | Bayesian Popularity Baseline | Bayesian weighted rating baseline with catalog mean and vote count threshold | M1 | R1 |
-| F3 | Item-KNN Recommender | Replicate Furtado & Singh (2020) Table 5 with Adjusted Cosine similarity and significance shrinkage (User B Trance = 4.0) | M1 | R1, Table 5 |
-| F4 | Funk-SVD with Fast SGD | Biased matrix factorization ($p_u, q_i, b_u, b_i$) trained with Numba-accelerated SGD (15 epochs in ~2s) | M1 | R1 |
-| F5 | Closed-Form Online Fold-in | Analytical Ridge regression user vector solver $(Q_u^T Q_u + \Lambda)^{-1} Q_u^T y_u$ for real-time rating updates without retrain | M1, M3 | R1, R2 |
-| F6 | Association Rules (Lift) | Co-occurrence matrix and Lift metric computation for "Users also watched" | M1 | R1 |
-| F7 | Genre KMeans Demo Profiles | KMeans ($k=4$) on genre distributions isolating Neel (Action/Sci-Fi), Nitin (Drama/Romance), and Mukesh (Cold-start) | M1 | R1 |
-| F8 | Offline Metrics & CLI | Evaluation harness computing RMSE, MAE, Precision@10, Recall@10, NDCG@10, Catalog Coverage@10 saved to `artifacts/v1/metrics.json` via `recsys evaluate` | M1 | R1, Acceptance |
-| F9 | ML Test Suite | Complete unit test suite in `ml/tests/` verifying Table 5, shrinkage, SGD convergence, fold-in, metrics | M1 | Acceptance |
-| F10 | PostgreSQL Schema `cinematch` | Isolated database schema in PostgreSQL 18 with tables `movies`, `profiles`, `ratings`, `user_lists` | M2 | R2 |
-| F11 | Alembic Migrations | Migration environment configured for `cinematch` schema with upgrade/downgrade scripts | M2 | R2 |
-| F12 | Database Seed Script | Pre-seed profiles Neel (`user_idx=2955`), Nitin (`user_idx=2583`), Mukesh (0 ratings), and MovieLens catalog movies | M2 | R2 |
-| F13 | TMDB API Client & Fallback | Integration client with TMDB v3 API and deterministic offline fallback metadata generator (SVG posters, synopses) | M2 | R2 |
-| F14 | Layered FastAPI Backend | REST service (`routers -> services -> repositories`), dependency injection, sync SQLAlchemy 2.0 with connection pool | M3 | R2 |
-| F15 | Model Registry & Caching | In-memory model registry loading `artifacts/v1/`, TTLCache, immediate profile cache invalidation on rating | M3 | R2 |
-| F16 | Real-time Fold-in Endpoint | `POST /api/v1/profiles/{id}/ratings` persisting rating, solving fold-in user factor, and invalidating cache in <50ms | M3 | R2 |
-| F17 | Model Lab Explainability API | Math breakdown endpoints returning Funk-SVD biases/factors and Item-KNN neighbor weights & rating deviations | M3 | R2 |
-| F18 | Backend Test Suite | API integration test suite in `backend/tests/` covering profiles, movies, ratings, recommendations, explainability | M3 | Acceptance |
-| F19 | Frontend React/Vite/Tailwind Scaffold | Modern dark-themed Netflix clone UI scaffolded in `frontend/` with strict TypeScript configuration | M4 | R3 |
-| F20 | Profile Picker Screen | "Who's watching?" screen with avatars and descriptions for Neel, Nitin, and Mukesh | M4 | R3 |
-| F21 | Cold-Start Onboarding (Mukesh) | Mandatory 6-movie rating onboarding screen replicating Furtado & Singh rule with search bar, starter grid, and locked "Generate Recommendations" button | M4 | R3, Paper |
-| F22 | Netflix Browse Page | Billboard hero banner with backdrop and match %, carousels: "Top Picks", "Because you liked", "Users also watched", genres | M4 | R3 |
-| F23 | Title Detail Modal | Interactive modal with backdrop, synopsis, cast/crew, interactive 1-5 star ratings, and "More like this" | M4 | R3 |
-| F24 | Interactive Model Lab Dashboard | Dashboard with live leaderboard from `metrics.json`, Funk-SVD convergence curves, side-by-side comparison, math breakdowns | M4 | R3 |
-| F25 | Frontend TypeScript Build Verification | Production build compile via `cd frontend && npm run build` with zero TypeScript errors | M4 | Acceptance |
-| F26 | E2E Requirement Test Suite (Tiers 1-4) | Comprehensive opaque-box E2E test suite covering feature coverage, boundaries, cross-feature reactivity, and user journeys | E2E Track | Acceptance |
-| F27 | Final E2E Integration & Verification | Pass 100% of E2E tests, verifying Neel vs Nitin distinct rows, Mukesh gating, real-time fold-in updates, Model Lab toggle | M5 | Acceptance |
-| F28 | Adversarial Coverage Hardening (Tier 5) | White-box stress testing and edge-case hardening | M5 | Acceptance |
+| F01 | Database SQLite Fallback | Automatic fallback from PostgreSQL to `cinematch.db` with schema translation (`cinematch` -> `None`) and table creation | M1 | Survey Data & R3 |
+| F02 | Auto-Seeding Pipeline | Embedded self-contained seeding of 24 starter movies and baseline personas (Neel, Nitin, Mukesh) without requiring external parquet files | M1 | Survey Data & R3 |
+| F03 | TMDB Offline SVG Fallback | Deterministic base64 SVG poster and backdrop generation for offline media resilience | M1 | Survey Data & R3 |
+| F04 | Watchlist API CRUD | Repository, service, and routes (`GET`, `POST`, `DELETE`) for profile watchlists using `cinematch.user_lists` | M2 | Survey Backend & R2 |
+| F05 | Movie Catalog API | `GET /api/v1/movies` endpoint with genre filtering, title search, and vote/rating sorting | M2 | Survey Backend & R2 |
+| F06 | Profile Management & Reset | `POST /api/v1/profiles` (registration) and `POST /api/v1/profiles/reset` (persona state reset for E2E testing) | M2 | Survey Backend & R2 |
+| F07 | Cold-Start Gating & Fold-In | 6-movie cold-start gating enforcement (403 Forbidden) and sub-50ms analytical Ridge fold-in upon rating submission | M2 | Survey Backend & R2 |
+| F08 | Design System & Token Integration | Stitch cyber-cinematic dark theme tokens, Google Fonts (`Plus Jakarta Sans`, `Inter`), Material Symbols in Vite/Tailwind | M3 | Survey Frontend & R1 |
+| F09 | Pre-SignIn Home (`06`) | Hero discovery, search with ⌘K, genre pills, Quick Roll randomizer, star rating widgets, 6-rating calibration tracker, Cosine Similarity drawer | M3 | Survey Frontend & R1 |
+| F10 | Taste Onboarding (`05`) | Interactive movie selection, 6-movie cold-start circular progress gauge, live counters, unlockable recommendation synthesis CTA | M3 | Survey Frontend & R1 |
+| F11 | Post-SignIn Feed (`02`) | Personalized billboard hero, Taste DNA chips, 98% Affinity resonance gauge, Top Picks for You (5 cols), Because You Loved, Users Also Watched | M3 | Survey Frontend & R1 |
+| F12 | Global Rankings & Ratings (`04`) | Multi-genre leaderboard, #1 Dune podium spotlight, period tabs, 1–5 star rating submission triggering real-time fold-in, watchlist tracking | M3 | Survey Frontend & R1 |
+| F13 | Auth & Profile Switcher (`03`) | Sign In / Sign Up tabbed card with 1-click persona switching (Neel, Nitin, Mukesh, New User) | M3 | Survey Frontend & R1 |
+| F14 | Watchlist Page (`01`) | Saved titles catalog, Grid vs List layout switch, telemetry stats bar (runtime, avg rating, unwatched ratio), streaming tags, remove/stream actions | M3 | Survey Frontend & R1 |
+| F15 | Profile & Vector Settings (`07`) | Taste affinity continuous sliders, 6-axis dimensional SVG radar chart, rating history, RecSys model switch (`funk_svd` vs `item_knn`) | M3 | Survey Frontend & R1 |
+| F16 | Static Mount & Local Hosting | Single-command or integrated hosting serving API and frontend assets on localhost | M4 | Survey Backend & R4 |
+| F17 | Multi-Tier E2E Test Suite | Comprehensive opaque-box test suite (Tiers 1-4) verifying all features across all 7 screens | E2E-Track | Dual-Track Specs |
+| F18 | Adversarial Coverage Hardening | Tier 5 white-box stress testing, edge-case probing, and verification gate | M4 (Phase 2) | Dual-Track Specs |
 
 ## Milestones
 | # | Name | Scope | Dependencies | Status |
 |---|------|-------|-------------|--------|
-| M1 | ML Core & Recommender Pipeline | F1-F9: Furtado & Singh Table 5 KNN, Funk-SVD fast SGD, online fold-in, association rules, Bayesian popularity, KMeans profiles, offline metrics, CLI, ml/tests | None | DONE |
-| M2 | Database Schema & Backend Infrastructure | F10-F13: PostgreSQL schema cinematch, Alembic migrations, SQLAlchemy models, seed data (Neel, Nitin, Mukesh, movies), TMDB client fallback | None | DONE |
-| M3 | FastAPI Service & Model Integration | F14-F18: Layered architecture, model registry, online fold-in endpoints, caching, Model Lab explainability endpoint, backend/tests | M1, M2 | DONE |
-| M4 | Netflix-Clone Frontend Core | F19-F25: React + TypeScript + Vite + Tailwind, profile picker, cold-start onboarding 6 ratings, browse page, billboard, carousels, modal, Model Lab UI | None | DONE |
-| E2E | E2E Testing Track | F26: Opaque-box requirement-driven test infrastructure & test cases (Tiers 1-4) publishing TEST_READY.md | None | DONE |
-| M5 | Final E2E Integration & Hardening | F27-F28: Pass 100% E2E tests (Tiers 1-4) & Phase 2 adversarial coverage hardening (Tier 5) | M1, M2, M3, M4, E2E | IN_PROGRESS |
+| M1 | Database Resilience & Media Fallback | SQLite auto-fallback probe, schema translation, embedded starter catalog & persona auto-seeder, TMDB offline SVG pipeline | none | DONE |
+| M2 | Backend API Harmonization & Watchlist | Watchlist repository/service/router (`GET`, `POST`, `DELETE`), catalog listing `GET /api/v1/movies`, profile registration/reset, static file mounting | M1 | PLANNED |
+| M3 | Frontend 7-Screen Migration & Integration | Complete replacement/upgrade of `frontend/src/` with the 7 Stitch screens, Tailwind tokens, design system, API integration, and Watchlist context | M2 | PLANNED |
+| E2E | E2E Testing Suite (Tiers 1-4) | Requirement-driven multi-tier test harness covering all 18 features (Tiers 1-4) | none | PLANNED |
+| M4 | Final Integration, Test Pass & Hardening | 100% E2E test pass across all tiers, Tier 5 adversarial testing, local server execution and live browser verification | M3, E2E | PLANNED |
 
 ## Interface Contracts
 
-### 1. Model Artifacts (`artifacts/v1/`)
-- `id_maps.json`: `{"user2idx": {id: idx}, "idx2user": {idx: id}, "movie2idx": {id: idx}, "idx2movie": {idx: id}}`
-- `funk_svd.npz`: `P` (users x f), `Q` (items x f), `b_u` (users), `b_i` (items), `mu` (float)
-- `item_knn.npz`: sparse similarity matrix `S` (items x items), `item_means`, `global_mean`
-- `associations.parquet` or `associations.json`: `{item_idx: [{"item_idx": j, "lift": float, "cooccurrence": int}]}`
-- `profiles.json`: `{neel: {user_idx: 2955, name: "Neel", genres: ["Action", "Sci-Fi"]}, nitin: {user_idx: 2583, name: "Nitin", genres: ["Drama", "Romance"]}, mukesh: {user_idx: null, name: "Mukesh", ratings_count: 0}}`
-- `metrics.json`: `{"popularity": {...}, "item_knn": {...}, "funk_svd": {...}}`
+### Watchlist API (`cinematch.user_lists`)
+- `GET /api/v1/profiles/{profile_id}/watchlist`
+  - Response: `list[MovieWatchlistResponse]` (movie metadata, tmdb_id, poster_url, backdrop_url, release_year, genres, added_at)
+- `POST /api/v1/profiles/{profile_id}/watchlist/{movie_id}`
+  - Response: `{"status": "added", "profile_id": str, "movie_id": str}` (HTTP 201)
+- `DELETE /api/v1/profiles/{profile_id}/watchlist/{movie_id}`
+  - Response: `{"status": "removed", "profile_id": str, "movie_id": str}` (HTTP 200)
 
-### 2. Backend API (`/api/v1` and `/api`)
-- `GET /api/v1/profiles`: returns list of profiles with `id, name, avatar, bio, ratings_count, is_cold_start`.
-- `GET /api/v1/profiles/{id}`: returns profile details.
-- `GET /api/v1/profiles/{id}/recommendations?model={funk_svd|item_knn}&limit=20`: returns personalized recommendations. If profile is Mukesh and ratings_count < 6, returns `403 Forbidden` (`{"detail": "Cold start profile requires at least 6 ratings"}`).
-- `GET /api/v1/recommendations/billboard?profile_id={id}`: returns hero movie recommendation.
-- `GET /api/v1/recommendations/because-you-liked?profile_id={id}`: returns top item and KNN similar items.
-- `GET /api/v1/recommendations/also-watched/{movie_id}`: returns association rules lift items.
-- `GET /api/v1/movies/starter`: returns 24 diverse popular titles for cold-start onboarding.
-- `GET /api/v1/movies/search?q={query}`: returns matching movies.
-- `GET /api/v1/movies/{id}`: returns movie details (synopsis, cast, backdrop, poster, genres).
-- `POST /api/v1/profiles/{id}/ratings`: body `{"movie_id": int, "rating": float}`. Saves rating, executes online fold-in, updates user vector, invalidates cache, returns `{"status": "ok", "ratings_count": int, "unlocked": bool}`.
-- `GET /api/v1/model-lab/leaderboard`: returns parsed `artifacts/v1/metrics.json`.
-- `GET /api/v1/model-lab/convergence`: returns Funk-SVD epoch loss and validation RMSE history.
-- `GET /api/v1/model-lab/compare?profile_id={id}`: returns side-by-side top 10 items from Item-KNN vs Funk-SVD.
-- `GET /api/v1/model-lab/explain?profile_id={id}&movie_id={movie_id}&model={model}`:
-  - For Funk-SVD: returns `{mu, user_bias, item_bias, dot_product, latent_breakdown: [...], predicted_score}`.
-  - For Item-KNN: returns `{user_mean, neighbors: [{movie_id, title, similarity, rating, contribution}], predicted_score}`.
+### Catalog API
+- `GET /api/v1/movies?genre={genre}&search={query}&sort={top_rated|recent}&limit={int}&offset={int}`
+  - Response: `{"items": list[MovieSummary], "total": int, "genre": str}`
 
-## Code Layout & Ownership
-- `ml/`: Owned exclusively by Milestone M1 workers.
-  - `ml/src/recsys/config.py` (fix `parents[3]`)
-  - `ml/src/recsys/models/funk_svd.py`
-  - `ml/src/recsys/models/item_knn.py`
-  - `ml/src/recsys/models/association_rules.py`
-  - `ml/src/recsys/profiles/cluster.py`
-  - `ml/src/recsys/cli.py`
-  - `ml/tests/`
-- `backend/`: Owned exclusively by Milestones M2 and M3 workers.
-  - `backend/app/core/config.py`, `database.py`
-  - `backend/app/models/` (SQLAlchemy models)
-  - `backend/app/schemas/` (Pydantic schemas)
-  - `backend/app/repositories/`
-  - `backend/app/services/`
-  - `backend/app/routers/`
-  - `backend/app/main.py`
-  - `backend/alembic/`
-  - `backend/scripts/seed.py`
-  - `backend/tests/`
-- `frontend/`: Owned exclusively by Milestone M4 workers.
-  - `frontend/src/` (components, pages, api, context, types)
-  - `frontend/package.json`, `vite.config.ts`, `tailwind.config.js`, `tsconfig.json`
-- `tests/e2e/`: Owned exclusively by E2E Testing Track workers.
+### Profile Reset API
+- `POST /api/v1/profiles/reset`
+  - Payload: `{"profile_id": str}` (or empty for all default personas)
+  - Response: `{"status": "reset", "profile_id": str}`
+
+### Cold-Start Gating API Contract
+- `GET /api/v1/profiles/{profile_id}/recommendations`
+  - If `profile.ratings_count < 6`: HTTP 403 Forbidden `{"detail": "Cold start profile requires at least 6 ratings"}`
+  - If `profile.ratings_count >= 6`: HTTP 200 OK `{"recommendations": list[MovieRecommendation], "model": str, "latency_ms": float}`
+
+### Database Resilience Contract
+- Connection probe attempts PostgreSQL first (`postgresql+psycopg://...`).
+- Upon connection error / authentication failure / unreachable host:
+  - Automatically instantiates SQLite engine: `sqlite:///cinematch.db`
+  - Applies `execution_options={"schema_translate_map": {"cinematch": None}}`
+  - Enables `PRAGMA foreign_keys=ON`
+  - Executes `Base.metadata.create_all()`
+  - Triggers auto-seed if profile count == 0.
+
+## Code Layout
+- `backend/app/core/database.py`: Database engine instantiation, resilient connection fallback.
+- `backend/app/core/config.py`: Environment configuration.
+- `backend/app/models/`: SQLAlchemy models (`base.py`, `profile.py`, `movie.py`, `rating.py`, `user_list.py`).
+- `backend/app/repositories/`: Data access layer (`profile_repository.py`, `movie_repository.py`, `rating_repository.py`, `user_list_repository.py`).
+- `backend/app/services/`: Business logic (`rating_service.py`, `recommendation_service.py`, `watchlist_service.py`, `tmdb.py`).
+- `backend/app/routers/`: FastAPI endpoints (`profiles.py`, `movies.py`, `ratings.py`, `recommendations.py`, `watchlist.py`, `tmdb.py`).
+- `backend/scripts/seed.py`: Robust database seeding with embedded starter dataset.
+- `frontend/src/pages/`:
+  - `HomePage.tsx` (Screen 06 Pre-SignIn Home)
+  - `OnboardingPage.tsx` (Screen 05 Taste Onboarding)
+  - `BrowsePage.tsx` (Screen 02 Post-SignIn Feed)
+  - `RankingsPage.tsx` (Screen 04 Global Rankings & Ratings)
+  - `AuthPage.tsx` (Screen 03 Authentication & Profile Switcher)
+  - `WatchlistPage.tsx` (Screen 01 Watchlist)
+  - `ProfilePage.tsx` (Screen 07 Profile & Vector Settings)
+  - `ModelLabPage.tsx` (Model Explainability & Metrics)
+- `frontend/src/context/`: `ProfileContext.tsx`, `WatchlistContext.tsx`, `ModelContext.tsx`.
+- `tests/e2e/`: Multi-tier test suite covering Tiers 1-4.

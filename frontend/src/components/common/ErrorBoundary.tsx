@@ -26,7 +26,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
   private handleReset = () => {
     this.setState({ hasError: false, error: null });
-    window.location.href = '/profiles';
+    window.location.href = '/';
   };
 
   private handleReload = () => {
@@ -65,7 +65,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 onClick={this.handleReset}
                 className="px-5 py-2.5 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-semibold rounded text-sm transition-colors"
               >
-                Go to Profiles
+                Go to Home
               </button>
             </div>
           </div>

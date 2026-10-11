@@ -178,7 +178,7 @@ export const TitleDetailModal: React.FC<TitleDetailModalProps> = ({
                   <span>Your Rating</span>
                   {isSubmittingRating && (
                     <span className="text-[10px] text-amber-400 animate-pulse">
-                      Updating vector...
+                      Updating preferences...
                     </span>
                   )}
                 </div>
@@ -193,7 +193,7 @@ export const TitleDetailModal: React.FC<TitleDetailModalProps> = ({
                 </div>
 
                 <p className="text-[11px] text-zinc-400 mt-2 leading-relaxed">
-                  Rating this movie triggers instant closed-form online fold-in: updates your user vector $p_u$ without retraining.
+                  Rating this movie instantly refines your recommendations and tailors future film suggestions.
                 </p>
               </div>
 
@@ -203,7 +203,7 @@ export const TitleDetailModal: React.FC<TitleDetailModalProps> = ({
                   className="w-full flex items-center justify-center gap-1.5 py-1.5 rounded bg-zinc-800 hover:bg-zinc-700 text-xs font-semibold text-zinc-200 border border-zinc-700 transition-colors"
                 >
                   <Calculator className="w-3.5 h-3.5 text-[#E50914]" />
-                  <span>{showMath ? 'Hide Math Breakdown' : 'Explain Prediction Math'}</span>
+                  <span>{showMath ? 'Hide Details' : 'View Recommendation Details'}</span>
                 </button>
               </div>
             </div>

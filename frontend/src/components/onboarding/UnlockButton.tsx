@@ -37,7 +37,7 @@ export const UnlockButton: React.FC<UnlockButtonProps> = ({
 
         <span>
           {isLoading
-            ? 'Running Fold-in Solver...'
+            ? 'Personalizing Recommendations...'
             : 'Generate Recommendations'}
         </span>
 

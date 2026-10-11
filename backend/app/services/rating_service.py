@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 from app.models.profile import Profile
 from app.models.movie import Movie
 from app.models.rating import Rating
+from app.models.user import User
 from app.repositories.profile_repository import profile_repository
 from app.repositories.movie_repository import movie_repository
 from app.repositories.rating_repository import rating_repository
@@ -25,11 +26,28 @@ class RatingService:
     ) -> Dict[str, Any]:
         """Submit a movie rating, perform instantaneous online fold-in, and invalidate profile cache."""
         profile = profile_repository.get_by_id(db, profile_id)
-        if not profile:
+        user = db.query(User).filter(User.id == profile_id).first()
+
+        if not profile and not user:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail=f"Profile '{profile_id}' not found",
             )
+
+        if not profile and user:
+            profile = Profile(
+                id=user.id,
+                name=user.name,
+                avatar=user.avatar,
+                bio="Movie enthusiast",
+                taste_cluster="General",
+                is_demo=False,
+                ratings_count=user.ratings_count,
+                is_cold_start=user.is_cold_start,
+            )
+            db.add(profile)
+            db.commit()
+            db.refresh(profile)
 
         movie = movie_repository.get_by_id(db, movie_id)
         if not movie:
@@ -70,7 +88,18 @@ class RatingService:
         b_u, p_u = reg.fold_in_profile(profile.id, user_ratings_dict)
         fold_in_duration_ms = (time.perf_counter() - t0) * 1000.0
 
-        # 4. Immediate cache invalidation for the rated profile
+        # 4. Synchronize user entity telemetry and persist 32-dim latent factor taste vector
+        if not user:
+            user = db.query(User).filter(User.id == profile.id).first()
+        if user:
+            user.ratings_count = new_count
+            user.is_cold_start = is_cold_start
+            user.taste_vector = [float(v) for v in (p_u.tolist() if hasattr(p_u, "tolist") else p_u)]
+            db.add(user)
+            db.commit()
+            db.refresh(user)
+
+        # 5. Immediate cache invalidation for the rated profile
         cache = get_cache_service()
         evicted_keys = cache.invalidate_profile(profile.id)
 
@@ -80,14 +109,16 @@ class RatingService:
             "ratings_count": new_count,
             "unlocked": unlocked,
             "fold_in_ms": round(fold_in_duration_ms, 3),
+            "fold_in_time_ms": round(fold_in_duration_ms, 3),
             "evicted_cache_entries": evicted_keys,
             "message": "Recommendations unlocked!" if unlocked and is_created and new_count == 6 else "Rating saved",
         }
 
     def get_ratings(self, db: Session, profile_id: str) -> List[Rating]:
-        """Fetch all ratings submitted by a profile."""
+        """Fetch all ratings submitted by a profile or user."""
         profile = profile_repository.get_by_id(db, profile_id)
-        if not profile:
+        user = db.query(User).filter(User.id == profile_id).first()
+        if not profile and not user:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail=f"Profile '{profile_id}' not found",

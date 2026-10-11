@@ -16,10 +16,13 @@ export async function apiFetch<T>(
   endpoint: string,
   options: RequestInit = {}
 ): Promise<T> {
-  const url = `${BASE_URL}${endpoint}`;
-  const headers = {
+  const url = endpoint.startsWith('http') ? endpoint : `${BASE_URL}${endpoint}`;
+  const token = localStorage.getItem('cinematch_token');
+
+  const headers: Record<string, string> = {
     'Content-Type': 'application/json',
-    ...(options.headers || {}),
+    ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
+    ...((options.headers as Record<string, string>) || {}),
   };
 
   try {
@@ -36,7 +39,7 @@ export async function apiFetch<T>(
           detail = typeof errorJson.detail === 'string' ? errorJson.detail : JSON.stringify(errorJson.detail);
         }
       } catch {
-        // Fallback to text or generic status
+        // Fallback to text
       }
       throw new ApiError(res.status, detail);
     }
@@ -46,7 +49,6 @@ export async function apiFetch<T>(
     if (err instanceof ApiError) {
       throw err;
     }
-    // Network errors (e.g. backend not running)
     const message = err instanceof Error ? err.message : 'Network error';
     throw new ApiError(503, message);
   }

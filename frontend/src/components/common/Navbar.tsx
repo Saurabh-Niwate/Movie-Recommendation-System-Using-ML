@@ -1,217 +1,102 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { useProfile } from '../../context/ProfileContext';
-import { useModel } from '../../context/ModelContext';
-import { Cpu, ChevronDown, User, Sparkles, Layers } from 'lucide-react';
+import React from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 export const Navbar: React.FC = () => {
-  const { activeProfile, profiles, selectProfile } = useProfile();
-  const { selectedModel, toggleModel } = useModel();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [showProfileMenu, setShowProfileMenu] = useState(false);
-  const [showModelMenu, setShowModelMenu] = useState(false);
-  const navigate = useNavigate();
+  const { user, signOut } = useAuth();
   const location = useLocation();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const isActive = (path: string) => {
+    if (path === '/' && location.pathname === '/') return true;
+    if (path !== '/' && location.pathname.startsWith(path)) return true;
+    return false;
+  };
+
+  const navItemClass = (path: string) => {
+    return isActive(path)
+      ? 'px-4 py-1.5 rounded-full transition-all bg-primary-container text-on-primary-container font-semibold shadow-[0_0_12px_rgba(128,131,255,0.35)] text-sm'
+      : 'px-4 py-1.5 rounded-full font-medium text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-all';
+  };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 ${
-        isScrolled ? 'bg-[#141414]/95 backdrop-blur-md shadow-xl' : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Brand & Left Navigation */}
-        <div className="flex items-center gap-8">
-          <Link to="/browse" className="flex items-center gap-2 group">
-            <span className="text-[#E50914] font-black text-2xl tracking-tighter uppercase drop-shadow-md group-hover:scale-105 transition-transform">
-              CineMatch
+    <header className="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-2xl shadow-[0_1px_12px_rgba(0,0,0,0.4)]">
+      <div className="h-20 w-full px-4 sm:px-8 md:px-12 flex items-center justify-between gap-4">
+        {/* Brand Logo */}
+        <Link to="/" className="flex items-center gap-2 group shrink-0">
+          <div className="flex items-baseline gap-1">
+            <span className="font-extrabold text-lg text-on-surface tracking-tight">MVZ</span>
+            <span className="font-bold text-[11px] text-secondary uppercase tracking-widest bg-surface-container-lowest/80 px-1 py-0.5 rounded">
+              Recommender
             </span>
-            <span className="hidden sm:inline-block text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-400 border border-zinc-700">
-              RecSys
-            </span>
-          </Link>
-
-          <div className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <Link
-              to="/browse"
-              className={`transition-colors hover:text-white ${
-                location.pathname === '/browse' ? 'text-white font-bold' : 'text-zinc-400'
-              }`}
-            >
-              Browse
-            </Link>
-            <Link
-              to="/model-lab"
-              className={`flex items-center gap-1.5 transition-colors hover:text-white ${
-                location.pathname === '/model-lab' ? 'text-white font-bold' : 'text-zinc-400'
-              }`}
-            >
-              <Cpu className="w-4 h-4 text-[#E50914]" />
-              <span>Model Lab</span>
-            </Link>
           </div>
+        </Link>
+
+        {/* Center Pill Navigation */}
+        <div className="flex items-center justify-center">
+          <nav className="flex items-center p-1 bg-surface-container-low/90 backdrop-blur-md rounded-full shadow-[inset_0_1px_4px_rgba(0,0,0,0.6)] border border-outline-variant/30">
+            <Link to="/" className={navItemClass('/')}>
+              Explore
+            </Link>
+            {user && (
+              <Link to="/feed" className={navItemClass('/feed')}>
+                Feed
+              </Link>
+            )}
+            <Link to="/watchlist" className={navItemClass('/watchlist')}>
+              Watchlist
+            </Link>
+            <Link to="/rankings" className={navItemClass('/rankings')}>
+              Rankings
+            </Link>
+          </nav>
         </div>
 
-        {/* Right Section: Model Pill & Profile Dropdown */}
-        <div className="flex items-center gap-4">
-          {/* Active Model Indicator Pill */}
-          <div className="relative">
-            <button
-              onClick={() => setShowModelMenu(!showModelMenu)}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-xs font-semibold text-zinc-200 transition-all shadow-inner"
-              title="Click to toggle recommendation algorithm"
-            >
-              <Layers className="w-3.5 h-3.5 text-[#E50914]" />
-              <span className="hidden sm:inline text-zinc-400">Algorithm:</span>
-              <span className="text-white">
-                {selectedModel === 'funk_svd' ? 'Funk-SVD' : 'Item-KNN'}
-              </span>
-              <ChevronDown className="w-3 h-3 text-zinc-400" />
-            </button>
-
-            {showModelMenu && (
-              <div
-                className="absolute right-0 mt-2 w-64 bg-zinc-900 border border-zinc-800 rounded-lg shadow-2xl py-2 z-50"
-                onMouseLeave={() => setShowModelMenu(false)}
+        {/* Right Auth / Profile Controls */}
+        <div className="flex items-center gap-3 shrink-0">
+          {user ? (
+            <div className="flex items-center gap-3">
+              <Link
+                to="/profile"
+                className="relative flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high transition-all border border-outline-variant/30"
               >
-                <div className="px-3 py-1.5 border-b border-zinc-800 text-[11px] font-semibold text-zinc-400 uppercase tracking-wider">
-                  Active RecSys Model
+                <div className="relative w-7 h-7 rounded-full bg-primary-container text-on-primary-container font-bold text-xs flex items-center justify-center uppercase">
+                  {(user.full_name || user.name || user.email || 'U').charAt(0)}
+                  <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
                 </div>
-                <button
-                  onClick={() => {
-                    if (selectedModel !== 'funk_svd') toggleModel();
-                    setShowModelMenu(false);
-                  }}
-                  className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-zinc-800 transition-colors ${
-                    selectedModel === 'funk_svd' ? 'text-white bg-zinc-800/60 font-semibold' : 'text-zinc-400'
-                  }`}
-                >
-                  <div>
-                    <div className="font-bold text-white">Funk-SVD</div>
-                    <div className="text-[10px] text-zinc-500">Biased SGD + Closed-Form Fold-In</div>
-                  </div>
-                  {selectedModel === 'funk_svd' && <Sparkles className="w-3.5 h-3.5 text-[#E50914]" />}
-                </button>
-                <button
-                  onClick={() => {
-                    if (selectedModel !== 'item_knn') toggleModel();
-                    setShowModelMenu(false);
-                  }}
-                  className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-zinc-800 transition-colors ${
-                    selectedModel === 'item_knn' ? 'text-white bg-zinc-800/60 font-semibold' : 'text-zinc-400'
-                  }`}
-                >
-                  <div>
-                    <div className="font-bold text-white">Item-KNN</div>
-                    <div className="text-[10px] text-zinc-500">Adjusted Cosine & Shrinkage</div>
-                  </div>
-                  {selectedModel === 'item_knn' && <Sparkles className="w-3.5 h-3.5 text-[#E50914]" />}
-                </button>
-                <div className="pt-1 mt-1 border-t border-zinc-800 px-3">
-                  <Link
-                    to="/model-lab"
-                    onClick={() => setShowModelMenu(false)}
-                    className="text-[11px] text-[#E50914] hover:underline flex items-center gap-1 py-1"
-                  >
-                    Compare in Model Lab →
-                  </Link>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Profile Switcher */}
-          <div className="relative">
-            <button
-              onClick={() => setShowProfileMenu(!showProfileMenu)}
-              className="flex items-center gap-2 group p-1 rounded-md hover:bg-zinc-800/50 transition-colors"
-            >
-              {activeProfile ? (
-                <div className="relative">
-                  <img
-                    src={activeProfile.avatar}
-                    alt={activeProfile.name}
-                    className="w-8 h-8 rounded object-cover border border-zinc-700"
-                  />
-                  {activeProfile.is_cold_start && (
-                    <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-amber-500 border border-zinc-900" />
-                  )}
-                </div>
-              ) : (
-                <div className="w-8 h-8 rounded bg-zinc-800 flex items-center justify-center text-zinc-400">
-                  <User className="w-4 h-4" />
-                </div>
-              )}
-              <span className="hidden sm:inline text-xs font-medium text-zinc-200">
-                {activeProfile ? activeProfile.name : 'Select Profile'}
-              </span>
-              <ChevronDown className="w-3.5 h-3.5 text-zinc-400 group-hover:text-white transition-colors" />
-            </button>
-
-            {showProfileMenu && (
-              <div
-                className="absolute right-0 mt-2 w-56 bg-zinc-900 border border-zinc-800 rounded-lg shadow-2xl py-2 z-50"
-                onMouseLeave={() => setShowProfileMenu(false)}
+                <span className="text-xs font-semibold text-on-surface max-w-[120px] truncate hidden sm:inline">
+                  {user.full_name || user.name || (user.email ? user.email.split('@')[0] : 'Curator')}
+                </span>
+              </Link>
+              <button
+                onClick={() => {
+                  signOut();
+                  navigate('/');
+                }}
+                className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-all border border-outline-variant/20"
+                title="Sign out of account"
               >
-                <div className="px-3 py-1.5 border-b border-zinc-800 text-[11px] font-semibold text-zinc-400 uppercase tracking-wider">
-                  Switch Profiles
-                </div>
-                {profiles.map((p) => (
-                  <button
-                    key={p.id}
-                    onClick={() => {
-                      selectProfile(p);
-                      setShowProfileMenu(false);
-                      if (p.id === 'mukesh' && p.is_cold_start && p.ratings_count < 6) {
-                        navigate('/onboarding');
-                      } else {
-                        navigate('/browse');
-                      }
-                    }}
-                    className={`w-full text-left px-3 py-2 text-xs flex items-center gap-2.5 hover:bg-zinc-800 transition-colors ${
-                      activeProfile?.id === p.id ? 'bg-zinc-800/70 text-white font-semibold' : 'text-zinc-300'
-                    }`}
-                  >
-                    <img
-                      src={p.avatar}
-                      alt={p.name}
-                      className="w-6 h-6 rounded object-cover"
-                    />
-                    <div className="flex-1 min-w-0">
-                      <div className="truncate">{p.name}</div>
-                      <div className="text-[10px] text-zinc-500 truncate">
-                        {p.id === 'mukesh'
-                          ? 'Cold Start Profile'
-                          : (p.genres || []).slice(0, 2).join(', ')}
-                      </div>
-                    </div>
-                  </button>
-                ))}
-                <div className="pt-2 mt-1 border-t border-zinc-800 px-3">
-                  <button
-                    onClick={() => {
-                      setShowProfileMenu(false);
-                      navigate('/profiles');
-                    }}
-                    className="w-full text-left text-xs text-zinc-400 hover:text-white py-1 flex items-center gap-1.5"
-                  >
-                    <User className="w-3.5 h-3.5" />
-                    <span>Who&apos;s Watching?</span>
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <div className="flex items-center gap-2 sm:gap-3">
+              <Link
+                to="/auth?mode=signin"
+                className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-all"
+              >
+                Sign In
+              </Link>
+              <Link
+                to="/auth?mode=signup"
+                className="px-4 py-1.5 rounded-full bg-gradient-to-r from-secondary-container via-primary-container to-secondary text-on-secondary-container font-bold text-xs sm:text-sm shadow-[0_0_16px_rgba(76,215,246,0.35)] hover:scale-105 active:scale-95 transition-all"
+              >
+                Sign Up Free
+              </Link>
+            </div>
+          )}
         </div>
       </div>
-    </nav>
+    </header>
   );
 };

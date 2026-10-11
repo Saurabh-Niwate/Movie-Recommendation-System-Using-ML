@@ -38,6 +38,12 @@ class Settings(BaseSettings):
     db_port: int = 5432
     db_schema: str = "cinematch"
 
+    # Database Fallback Configuration
+    sqlite_db_path: str = "cinematch.db"
+    db_fallback_sqlite: bool = True
+    db_connect_timeout: int = 3
+    database_url: Optional[str] = None
+
     # Connection Pool Settings
     pool_size: int = 10
     max_overflow: int = 20
@@ -52,10 +58,24 @@ class Settings(BaseSettings):
     tmdb_base_url: str = "https://api.themoviedb.org/3"
     tmdb_image_base_url: str = "https://image.tmdb.org/t/p"
 
+    # JWT Authentication Configuration
+    jwt_secret_key: str = "cinematch-secret-token-key-2026-production-ready"
+    jwt_algorithm: str = "HS256"
+    jwt_access_token_expire_minutes: int = 60 * 24 * 7  # 7 days
+
     # Application Settings
     app_env: str = "development"
     debug: bool = True
     api_prefix: str = "/api/v1"
+
+    def __init__(self, **values: object) -> None:
+        super().__init__(**values)
+        if "tmdb_api" in values and "tmdb_read_token" not in values:
+            self.tmdb_read_token = str(values["tmdb_api"]).strip()
+
+    @property
+    def jwt_secret(self) -> str:
+        return self.jwt_secret_key
 
     @field_validator("db_port", mode="before")
     @classmethod
@@ -68,7 +88,7 @@ class Settings(BaseSettings):
             return v
         raise ValueError(f"Invalid port value: {v}")
 
-    @field_validator("db_user", "db_name", "db_host", "db_password", "db_schema", "tmdb_api", mode="before")
+    @field_validator("db_user", "db_name", "db_host", "db_password", "db_schema", "tmdb_api", "sqlite_db_path", mode="before")
     @classmethod
     def strip_whitespace_strings(cls, v: object) -> object:
         if isinstance(v, str):
@@ -76,8 +96,26 @@ class Settings(BaseSettings):
         return v
 
     @property
+    def sqlite_database_uri(self) -> str:
+        """Construct synchronous SQLite connection string resolving absolute path in project root."""
+        path = Path(self.sqlite_db_path)
+        if not path.is_absolute():
+            current = Path(__file__).resolve()
+            root = None
+            for p in current.parents:
+                if (p / "PROJECT.md").is_file() or (p / ".git").exists():
+                    root = p
+                    break
+            if root is None:
+                root = current.parents[3] if len(current.parents) >= 4 else Path.cwd()
+            path = (root / path).resolve()
+        return f"sqlite:///{path.as_posix()}"
+
+    @property
     def sqlalchemy_database_uri(self) -> str:
-        """Construct synchronous psycopg connection string."""
+        """Construct synchronous psycopg connection string or override."""
+        if self.database_url:
+            return self.database_url
         return (
             f"postgresql+psycopg://{self.db_user}:{self.db_password}"
             f"@{self.db_host}:{self.db_port}/{self.db_name}"

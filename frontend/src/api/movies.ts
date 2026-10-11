@@ -4,7 +4,10 @@ import { STARTER_MOVIES } from '../data/starterMovies';
 
 export async function fetchStarterMovies(): Promise<Movie[]> {
   try {
-    return await apiFetch<Movie[]>('/movies/starter');
+    const res = await apiFetch<Movie[] | { items: Movie[] }>('/movies/starter');
+    if (Array.isArray(res)) return res;
+    if (res && Array.isArray((res as { items: Movie[] }).items)) return (res as { items: Movie[] }).items;
+    return STARTER_MOVIES;
   } catch {
     return STARTER_MOVIES;
   }
@@ -15,7 +18,10 @@ export async function searchMovies(query: string): Promise<Movie[]> {
     return STARTER_MOVIES;
   }
   try {
-    return await apiFetch<Movie[]>(`/movies/search?q=${encodeURIComponent(query)}`);
+    const res = await apiFetch<Movie[] | { items: Movie[] }>(`/movies/search?q=${encodeURIComponent(query)}`);
+    if (Array.isArray(res)) return res;
+    if (res && Array.isArray((res as { items: Movie[] }).items)) return (res as { items: Movie[] }).items;
+    return [];
   } catch {
     const q = query.toLowerCase();
     return STARTER_MOVIES.filter(

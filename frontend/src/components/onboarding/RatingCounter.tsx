@@ -50,12 +50,11 @@ export const RatingCounter: React.FC<RatingCounterProps> = ({ count, target = 6 
       <p className="text-[11px] text-zinc-400 mt-2 leading-relaxed">
         {isComplete ? (
           <span className="text-emerald-400 font-medium">
-            ✓ Criteria met! Click &quot;Generate Recommendations&quot; below to enter latent space.
+            ✓ Criteria met! Click &quot;Generate Recommendations&quot; below to explore your personalized feed.
           </span>
         ) : (
           <span>
-            Per <strong>Furtado &amp; Singh (2020)</strong>: users must rate at least{' '}
-            <strong>6 movies</strong> before collaborative filtering recommendations can be computed. (
+            Please rate at least <strong>6 movies</strong> to unlock your personalized recommendations. (
             {target - count} more required)
           </span>
         )}

@@ -20,6 +20,7 @@ class RatingResponse(BaseModel):
     ratings_count: int
     unlocked: bool
     fold_in_ms: Optional[float] = None
+    fold_in_time_ms: Optional[float] = None
     message: Optional[str] = None
 
 

@@ -60,7 +60,7 @@ export const BrowsePage: React.FC = () => {
             <div className="py-20 flex flex-col items-center justify-center gap-3">
               <div className="w-10 h-10 border-4 border-[#E50914] border-t-transparent rounded-full animate-spin" />
               <span className="text-xs text-zinc-400 font-medium">
-                Generating personalized latent factor recommendations...
+                Generating your personalized recommendations...
               </span>
             </div>
           ) : (
@@ -87,9 +87,9 @@ export const BrowsePage: React.FC = () => {
 
       {/* Footer */}
       <footer className="border-t border-zinc-800/80 py-10 px-4 sm:px-8 text-center text-xs text-zinc-500 space-y-2">
-        <p>CineMatch Recommendation Engine • Fast SGD Funk-SVD & Item-KNN Adjusted Cosine</p>
+        <p>CineMatch • Personalized Film Discovery &amp; Recommendations</p>
         <p className="text-[11px] text-zinc-600">
-          Replicating Furtado &amp; Singh (2020) Table 5 &amp; Online Fold-in
+          Powered by real-time viewer preferences &amp; authentic media
         </p>
       </footer>
     </div>
