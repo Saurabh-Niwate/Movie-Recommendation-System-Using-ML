@@ -305,6 +305,10 @@ export const WatchlistPage: React.FC = () => {
                         alt={movie.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                         loading="lazy"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src =
+                            'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80';
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
 
@@ -410,7 +414,15 @@ export const WatchlistPage: React.FC = () => {
                   >
                     <div className="flex items-center gap-4 min-w-0">
                       <div className="w-12 h-16 rounded-lg overflow-hidden bg-surface-container shrink-0">
-                        <img src={getPosterUrl(movie)} alt={movie.title} className="w-full h-full object-cover" />
+                        <img
+                          src={getPosterUrl(movie)}
+                          alt={movie.title}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            (e.currentTarget as HTMLImageElement).src =
+                              'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80';
+                          }}
+                        />
                       </div>
                       <div className="min-w-0">
                         <h3 className="font-bold text-sm text-on-surface truncate">{movie.title}</h3>

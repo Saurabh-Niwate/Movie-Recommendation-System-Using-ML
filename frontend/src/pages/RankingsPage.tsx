@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Navbar } from '../components/common/Navbar';
 import { TrailerModal, TrailerMovieTarget } from '../components/modal/TrailerModal';
 import { MovieDetailModal, MovieDetailTarget } from '../components/modal/MovieDetailModal';
@@ -25,11 +26,12 @@ interface RankedMovie {
 
 export const RankingsPage: React.FC = () => {
   const { user } = useAuth();
+  const [searchParams] = useSearchParams();
   const [movies, setMovies] = useState<RankedMovie[]>([]);
   const [userRatings, setUserRatings] = useState<Map<number, number>>(new Map());
-  const [selectedPeriod, setSelectedPeriod] = useState<string>('all-time');
-  const [selectedGenre, setSelectedGenre] = useState<string>('all');
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [selectedPeriod, setSelectedPeriod] = useState<string>(searchParams.get('period') || 'all-time');
+  const [selectedGenre, setSelectedGenre] = useState<string>(searchParams.get('genre') || 'all');
+  const [searchQuery, setSearchQuery] = useState<string>(searchParams.get('search') || '');
   const [activeTrailer, setActiveTrailer] = useState<TrailerMovieTarget | null>(null);
   const [activeDetailMovie, setActiveDetailMovie] = useState<MovieDetailTarget | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -44,8 +46,8 @@ export const RankingsPage: React.FC = () => {
   };
 
   useEffect(() => {
-    // Load top rated catalog
-    apiFetch<{ items: RankedMovie[] }>('/movies?limit=50&sort=top_rated')
+    // Load top rated catalog (fetch full catalog for rich filtering)
+    apiFetch<{ items: RankedMovie[] }>('/movies?limit=120&sort=top_rated')
       .then((data) => {
         const sorted = (data.items || []).sort((a, b) => b.vote_average - a.vote_average);
         setMovies(sorted);
@@ -108,9 +110,9 @@ export const RankingsPage: React.FC = () => {
     }
   };
 
-  // Filtered and searched movies
+  // Filtered and searched movies with active period support
   const filteredRankings = useMemo(() => {
-    return movies.filter((m) => {
+    let result = movies.filter((m) => {
       const matchGenre =
         selectedGenre === 'all' ||
         (selectedGenre.toLowerCase() === 'sci-fi'
@@ -127,9 +129,29 @@ export const RankingsPage: React.FC = () => {
         (m.director && m.director.toLowerCase().includes(term)) ||
         m.genres.some((g) => g.toLowerCase().includes(term));
 
-      return matchGenre && matchSearch;
+      if (!matchGenre || !matchSearch) return false;
+
+      if (selectedPeriod === 'cyberpunk') {
+        return m.genres.some((g) => {
+          const l = g.toLowerCase();
+          return l.includes('sci') || l.includes('action') || l.includes('thriller');
+        });
+      }
+      return true;
     });
-  }, [movies, selectedGenre, searchQuery]);
+
+    // Apply period sorting & prioritization
+    if (selectedPeriod === 'anticipated') {
+      // Sort newest releases first (2024, 2023, 2022...)
+      return [...result].sort((a, b) => (b.year || 0) - (a.year || 0));
+    }
+    if (selectedPeriod === 'trending') {
+      // Sort by vote count / popularity volume
+      return [...result].sort((a, b) => (b.vote_count || 0) - (a.vote_count || 0));
+    }
+    // 'all-time' or default: sort by vote_average descending
+    return [...result].sort((a, b) => b.vote_average - a.vote_average);
+  }, [movies, selectedPeriod, selectedGenre, searchQuery]);
 
   const topPodium = filteredRankings.slice(0, 3);
   const remainingRankings = filteredRankings.slice(3);

@@ -137,6 +137,10 @@ export const MovieDetailModal: React.FC<MovieDetailModalProps> = ({
             src={getBackdropUrl()}
             alt={details.title}
             className="w-full h-full object-cover object-top"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src =
+                'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80';
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#141822] via-[#141822]/60 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#141822]/80 via-transparent to-transparent" />
@@ -158,6 +162,10 @@ export const MovieDetailModal: React.FC<MovieDetailModalProps> = ({
                 src={getPosterUrl()}
                 alt={details.title}
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src =
+                    'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80';
+                }}
               />
             </div>
 

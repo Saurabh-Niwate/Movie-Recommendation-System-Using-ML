@@ -105,6 +105,37 @@ export const OnboardingPage: React.FC = () => {
     }
   };
 
+  const handleQuickStart = async () => {
+    setSubmitting(true);
+    try {
+      // Auto-rate the top 6 starter movies
+      const sample = movies.slice(0, 6);
+      const nextMap = new Map(ratedMovies);
+      for (const m of sample) {
+        nextMap.set(m.id, 5);
+        try {
+          await apiFetch('/ratings', {
+            method: 'POST',
+            body: JSON.stringify({ movie_id: m.id, rating: 5 }),
+          });
+        } catch (e) {
+          // ignore
+        }
+      }
+      setRatedMovies(nextMap);
+      await refreshUser();
+      navigate('/feed', { replace: true });
+    } catch (err) {
+      navigate('/feed', { replace: true });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handleSkip = () => {
+    navigate('/feed', { replace: true });
+  };
+
   const filteredMovies = movies.filter((m) => {
     if (!searchFilter.trim()) return true;
     const term = searchFilter.toLowerCase();
@@ -267,6 +298,10 @@ export const OnboardingPage: React.FC = () => {
                     alt={movie.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src =
+                        'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80';
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
 
@@ -321,19 +356,29 @@ export const OnboardingPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-3 w-full sm:w-auto">
+          <div className="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
             <button
               type="button"
-              onClick={() => navigate(-1)}
-              className="px-4 py-2.5 rounded-xl text-xs font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all"
+              onClick={handleSkip}
+              className="px-3.5 py-2.5 rounded-xl text-xs font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all"
             >
-              Back
+              Skip to Feed
+            </button>
+            <button
+              type="button"
+              disabled={submitting}
+              onClick={handleQuickStart}
+              className="px-4 py-2.5 rounded-xl text-xs font-bold bg-secondary/15 hover:bg-secondary/25 text-secondary border border-secondary/30 transition-all flex items-center gap-1.5 shadow-sm"
+              title="Quickly auto-rate 6 cinema classics and unlock feed immediately"
+            >
+              <span className="material-symbols-outlined text-sm">bolt</span>
+              <span>Quick Start (6 Classics)</span>
             </button>
             <button
               type="button"
               disabled={totalRated < MIN_REQUIRED || submitting}
               onClick={handleSynthesizeTaste}
-              className={`w-full sm:w-auto px-8 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 ${
+              className={`w-full sm:w-auto px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 ${
                 totalRated >= MIN_REQUIRED
                   ? 'bg-gradient-to-r from-primary-container via-secondary-container to-secondary text-on-primary-container shadow-[0_0_28px_rgba(76,215,246,0.4)] hover:scale-105 active:scale-95 cursor-pointer'
                   : 'bg-surface-container text-outline opacity-60 cursor-not-allowed'

@@ -206,25 +206,42 @@ class RecommendationService:
         if reg.item_knn is None:
             raise HTTPException(status_code=500, detail="ItemKNN model not loaded")
 
-        # Find adjusted cosine neighbors
-        similar_items = reg.item_knn.similar_items(source_movie.item_idx, n=15)
+        # Find adjusted cosine neighbors (sample top 100 to ensure hits within local catalog)
+        similar_items = reg.item_knn.similar_items(source_movie.item_idx, n=100)
         neighbor_indices = [idx for idx, _ in similar_items]
         sim_scores_map = {idx: sim for idx, sim in similar_items}
 
         # Filter out movies already rated
-        rated_set = {r.item_idx for r in valid_ratings}
+        rated_set = {r.item_idx for r in valid_ratings if r.item_idx is not None}
         filtered_indices = [idx for idx in neighbor_indices if idx not in rated_set]
 
         similar_movies = movie_repository.get_by_item_indices(db, filtered_indices)
         recs: List[RecommendationItem] = []
+        seen_ids = set(r.movie_id for r in valid_ratings)
+        seen_ids.add(source_movie.id)
+
         for m in similar_movies:
-            if m.item_idx is not None:
+            if m.item_idx is not None and m.id not in seen_ids:
                 sim_val = sim_scores_map.get(m.item_idx, 0.5)
                 # Map similarity [0, 1] to predicted score ~ [3.0, 5.0]
                 pred_score = 3.0 + sim_val * 2.0
                 recs.append(self._build_recommendation_item(m, pred_score, "Item-KNN Similarity"))
+                seen_ids.add(m.id)
             if len(recs) >= 10:
                 break
+
+        # If neighbor count in catalog is small, pad with same-genre top rated movies
+        if len(recs) < 5 and source_movie.genres:
+            for g in source_movie.genres:
+                genre_movies = movie_repository.get_by_genre(db, g, limit=15)
+                for gm in genre_movies:
+                    if gm.id not in seen_ids:
+                        recs.append(self._build_recommendation_item(gm, 4.35, f"{g} Match"))
+                        seen_ids.add(gm.id)
+                    if len(recs) >= 10:
+                        break
+                if len(recs) >= 5:
+                    break
 
         response = BecauseYouLikedResponse(
             source_movie=MovieSummary.model_validate(source_movie),

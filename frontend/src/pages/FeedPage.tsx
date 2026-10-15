@@ -36,6 +36,7 @@ export const FeedPage: React.FC = () => {
   });
   const [alsoWatched, setAlsoWatched] = useState<RecMovie[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isColdStart, setIsColdStart] = useState(false);
   const [activeTrailer, setActiveTrailer] = useState<TrailerMovieTarget | null>(null);
   const [activeDetailMovie, setActiveDetailMovie] = useState<MovieDetailTarget | null>(null);
   const [watchlistSuccess, setWatchlistSuccess] = useState<string | null>(null);
@@ -61,12 +62,15 @@ export const FeedPage: React.FC = () => {
           recs = Array.isArray(recData) ? recData : recData.recommendations || recData.items || [];
         } catch (err) {
           if (err instanceof ApiError && err.status === 403) {
-            navigate('/onboarding', { replace: true });
-            return;
+            // Cold-start user: show top-rated catalog gracefully with a setup prompt instead of kicking them out
+            setIsColdStart(true);
+            const popData = await apiFetch<{ items: RecMovie[] }>('/movies?limit=20&sort=top_rated');
+            recs = popData.items || [];
+          } else {
+            console.warn('Personalized recommendations unavailable, falling back to popular catalog:', err);
+            const popData = await apiFetch<{ items: RecMovie[] }>('/movies?limit=20&sort=popular');
+            recs = popData.items || [];
           }
-          console.warn('Personalized recommendations unavailable, falling back to popular catalog:', err);
-          const popData = await apiFetch<{ items: RecMovie[] }>('/movies?limit=15&sort=popular');
-          recs = popData.items || [];
         }
         if (isMounted) setTopRecs(recs);
 
@@ -95,28 +99,39 @@ export const FeedPage: React.FC = () => {
           const seedTitle =
             bylData.source_movie?.title ||
             userFavoriteMovie?.title ||
-            (recs.length > 0 ? recs[0].title : 'Your Favorites');
+            (recs.length > 0 ? recs[0].title : 'Inception');
           
-          const filteredByl = bylItems.filter((m) => !shownMovieIds.has(m.movie_id || m.id));
-          const finalByl = filteredByl.length >= 3 ? filteredByl : bylItems;
-          finalByl.forEach((m) => shownMovieIds.add(m.movie_id || m.id));
+          let filteredByl = bylItems.filter((m) => !shownMovieIds.has(m.movie_id || m.id));
+          
+          // Pad if recommendations count is small to guarantee a full row
+          if (filteredByl.length < 5) {
+            const popRes = await apiFetch<{ items: RecMovie[] }>('/movies?limit=15&sort=top_rated');
+            const candidates = (popRes.items || []).filter(
+              (m) => !shownMovieIds.has(m.movie_id || m.id) && m.title !== seedTitle
+            );
+            filteredByl = [...filteredByl, ...candidates];
+          }
+
+          filteredByl.forEach((m) => shownMovieIds.add(m.movie_id || m.id));
 
           if (isMounted) {
             setBecauseYouLiked({
               seed: seedTitle,
-              movies: finalByl.slice(0, 5),
+              movies: filteredByl.slice(0, 10),
             });
           }
         } catch (err) {
           // Dynamic fallback to user's favorite or highest rated genre
           const fallbackSeed = userFavoriteMovie?.title || (recs.length > 0 ? recs[0].title : 'Top Rated Cinema');
           try {
-            const res = await apiFetch<{ items: RecMovie[] }>('/movies?limit=12&sort=top_rated');
+            const res = await apiFetch<{ items: RecMovie[] }>('/movies?limit=15&sort=top_rated');
             const filteredFallback = (res.items || []).filter((m) => !shownMovieIds.has(m.movie_id || m.id));
+            const finalPool = filteredFallback.length >= 5 ? filteredFallback : (res.items || []);
+            finalPool.forEach((m) => shownMovieIds.add(m.movie_id || m.id));
             if (isMounted) {
               setBecauseYouLiked({
                 seed: fallbackSeed,
-                movies: (filteredFallback.length >= 5 ? filteredFallback : res.items || []).slice(0, 5),
+                movies: finalPool.slice(0, 10),
               });
             }
           } catch {
@@ -131,20 +146,24 @@ export const FeedPage: React.FC = () => {
           550;
 
         try {
-          const alsoData = await apiFetch<any>(`/recommendations/also-watched/${alsoSeedId}?limit=10`);
+          const alsoData = await apiFetch<any>(`/recommendations/also-watched/${alsoSeedId}?limit=15`);
           const alsoItems: RecMovie[] = Array.isArray(alsoData) ? alsoData : alsoData.items || alsoData.recommendations || [];
-          const filteredAlso = alsoItems.filter((m) => !shownMovieIds.has(m.movie_id || m.id));
-          const finalAlso = filteredAlso.length >= 4 ? filteredAlso : alsoItems;
+          let filteredAlso = alsoItems.filter((m) => !shownMovieIds.has(m.movie_id || m.id));
+          if (filteredAlso.length < 5) {
+            const extraRes = await apiFetch<{ items: RecMovie[] }>('/movies?sort=recent&limit=15');
+            const extra = (extraRes.items || []).filter((m) => !shownMovieIds.has(m.movie_id || m.id));
+            filteredAlso = [...filteredAlso, ...extra];
+          }
 
           if (isMounted) {
-            setAlsoWatched(finalAlso.slice(0, 5));
+            setAlsoWatched(filteredAlso.slice(0, 10));
           }
         } catch {
           try {
-            const res = await apiFetch<{ items: RecMovie[] }>('/movies?sort=recent&limit=10');
+            const res = await apiFetch<{ items: RecMovie[] }>('/movies?sort=recent&limit=15');
             const filteredFallback = (res.items || []).filter((m) => !shownMovieIds.has(m.movie_id || m.id));
             if (isMounted) {
-              setAlsoWatched((filteredFallback.length >= 5 ? filteredFallback : res.items || []).slice(0, 5));
+              setAlsoWatched((filteredFallback.length >= 5 ? filteredFallback : res.items || []).slice(0, 10));
             }
           } catch {
             // ignore
@@ -232,6 +251,30 @@ export const FeedPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Cold Start Discovery Alert Banner */}
+        {isColdStart && (
+          <div className="mb-8 p-4 sm:p-5 rounded-2xl bg-surface-container-high/90 backdrop-blur-xl border border-secondary/40 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center text-secondary shrink-0">
+                <span className="material-symbols-outlined text-xl">auto_awesome</span>
+              </div>
+              <div>
+                <h4 className="font-bold text-sm text-on-surface">Curated Trending Showcase</h4>
+                <p className="text-xs text-on-surface-variant">Rate 6 starter movies to train your custom Bayesian SVD taste vector.</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 shrink-0 w-full sm:w-auto">
+              <Link
+                to="/onboarding"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-secondary text-on-secondary text-xs font-bold hover:brightness-110 shadow-[0_0_16px_rgba(76,215,246,0.35)] flex items-center justify-center gap-1.5 transition-all"
+              >
+                <span className="material-symbols-outlined text-sm">stars</span>
+                <span>Personalize Taste (30s)</span>
+              </Link>
+            </div>
+          </div>
+        )}
+
         {/* Section 1: Favorite Genres & Styles Glass Bar */}
         <section className="w-full mb-10">
           <div className="relative rounded-2xl bg-surface-container/70 backdrop-blur-2xl p-6 sm:p-8 shadow-xl border border-outline-variant/30 overflow-hidden">
@@ -248,24 +291,48 @@ export const FeedPage: React.FC = () => {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2 pt-1">
-                  <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-secondary/15 text-secondary text-xs font-semibold shadow-sm">
+                  <button
+                    type="button"
+                    onClick={() => navigate('/rankings?genre=Sci-Fi')}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-secondary/15 hover:bg-secondary/25 text-secondary text-xs font-semibold shadow-sm transition-colors cursor-pointer"
+                  >
                     Sci-Fi ✦
-                  </span>
-                  <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-secondary/15 text-secondary text-xs font-semibold shadow-sm">
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => navigate('/rankings?period=cyberpunk')}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-secondary/15 hover:bg-secondary/25 text-secondary text-xs font-semibold shadow-sm transition-colors cursor-pointer"
+                  >
                     Mind-Bending ✦
-                  </span>
-                  <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface text-xs font-semibold hover:bg-secondary/20 hover:text-secondary transition-colors cursor-pointer">
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => navigate('/rankings?search=Blade+Runner')}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface text-xs font-semibold hover:bg-secondary/20 hover:text-secondary transition-colors cursor-pointer"
+                  >
                     Blade Runner 2049 ✦
-                  </span>
-                  <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface text-xs font-semibold hover:bg-secondary/20 hover:text-secondary transition-colors cursor-pointer">
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => navigate('/rankings?search=Nolan')}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface text-xs font-semibold hover:bg-secondary/20 hover:text-secondary transition-colors cursor-pointer"
+                  >
                     Christopher Nolan ✦
-                  </span>
-                  <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface text-xs font-semibold hover:bg-secondary/20 hover:text-secondary transition-colors cursor-pointer">
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => navigate('/rankings?search=Villeneuve')}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface text-xs font-semibold hover:bg-secondary/20 hover:text-secondary transition-colors cursor-pointer"
+                  >
                     Denis Villeneuve ✦
-                  </span>
-                  <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface text-xs font-semibold hover:bg-secondary/20 hover:text-secondary transition-colors cursor-pointer">
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => navigate('/rankings?genre=Thriller')}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface text-xs font-semibold hover:bg-secondary/20 hover:text-secondary transition-colors cursor-pointer"
+                  >
                     Psychological Thriller ✦
-                  </span>
+                  </button>
                   <Link
                     to="/profile"
                     className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-variant/70 hover:bg-primary-container/30 text-primary text-xs font-semibold transition-all shadow-inner"
@@ -345,6 +412,10 @@ export const FeedPage: React.FC = () => {
                       alt={movie.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src =
+                          'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80';
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
 
@@ -443,6 +514,10 @@ export const FeedPage: React.FC = () => {
                       alt={movie.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src =
+                          'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80';
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
 
@@ -517,6 +592,10 @@ export const FeedPage: React.FC = () => {
                       alt={movie.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src =
+                          'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80';
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
 

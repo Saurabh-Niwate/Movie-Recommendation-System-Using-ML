@@ -89,27 +89,31 @@ FALLBACK_TRAILER_KEYS: List[str] = [
     "W6Mm8Sbe__o",
 ]
 
-# Authentic high-resolution Stitch stills extracted from stitch_screens
+# Authentic high-resolution cinema stills
 STITCH_POSTER_STILLS: List[str] = [
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuANxWSqEDvASofTR3FJRQqmwbqTLW03-DETckLwOqjgOs7WRqXn4GmCBlfhgTKaZC-_qa2zNdbEPZIzJBD9_Wzcit354EALfM_oOTK0pAy56hWNpOaAKAgLQJiCgt5DkRIPguh79Sf7NW4LqCJX5WXADbmn3n9QuZyja4RfIXnlZZVKpubnw_Gu0aaPf-A6aIMwPgrPnwpXawssVr0jqrBkre7X2igXHuI1-HlKsFVJl8uANpPwimxn",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuB-DPLB3z53wFJ562TMnimuhb7R4J4BqYI478yZ_Hk2X8rN1N30rX9cKk8hXQ_B1n2L1h-YQvGvU1Zg8wV1a4wFh-G9_s5Kq_Z1Gg",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBT4YP5_MlOf7_cmyOwkXGnD2h5_P1m8Y4b-K6r2Q7n1_V9h3P5y2Q6h1_G4m7J5y-B8r1P9q3H2_l6Y8h-K4b1V7y2Q5m9_W",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDD-fYvkLXYEtT3zWf4CO79o7PqK2P_g3hK4H3e2H7U9_l7_L5hQ6r4J7Yq_b1J1H5w_K7hG9v3Q8m6P1h-R7y5Q2m3Y9_q1b",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDDoaEAOE_gRMfGo1osRABQy_g1V1n5Y5h9_Q7rK2b5H7_g3Q1n5_P9m3K1h8_V5r3Q2y7H6_q9J4h-B2m1P7y4Q2h5_G",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuAQqBz8Ub7ZXGmtIXlaWobJ9bYu-OMUZ1SWY2CucG-giFeqa88zDTH12kEZcBx7b1fPDPSL-GsBIaHUqdnp2d-Xg2ehNZdGMtWC2n85owGRbUKoMy3wZaw0nv7CX9zh0zkLwxn5ptKBqL87Bn24aL9cP7SZ_3ieZOqTf_Aurzqrz6C3ioWZnl2TXYbrIwrQZwOtoWoFmzk5HhlDhY1lhbeswusRzc4LuOceY-9Kg2u7ntHMAOI8YzeG",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDVmIvTWM0uguoHhNFvfs49X2m5_H1y9Q4b-P7r2K3n6_V5h1P8y3Q2h7_G5m4J9y-B1r3P7q2H6_l9Y4h-K2b1V5y8Q3m6_P",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuAb9H9swDj-UBbwCmf0g11WG0dUOw-IXKJP7_hFH6mJNVm3YUYw7nGg1nnOiit4UTJ2jZ9-8utW465iIkcVtGAJ8-yYsi6_YPxqjjax8v_MUAn-5KFjOXrATTOh7mEC6Q6Nf-VoBM8XDV2DvExVp_E7jOtUpSWJiPUWbWiXXQJ7jIaosPCP_IdIzvPrEdG0CE2EXZ8jftAJE5UjaENpXAM649K7f8Vnkmx34kaRPAb4TlYNhA5LqZ3V",
+    "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80",
+    "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80",
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=80",
+    "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=500&q=80",
+    "https://images.unsplash.com/photo-1509281373149-e957c6296406?auto=format&fit=crop&w=500&q=80",
+    "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=500&q=80",
+    "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=500&q=80",
+    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=500&q=80",
 ]
 
-# Authentic high-resolution Stitch backdrops
+# Authentic high-resolution cinema backdrops
 STITCH_BACKDROP_STILLS: List[str] = [
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBoplPIAIoyQ0vGqpfFufFS2egqu4_HvHfHIpfhjwu8Nz9B_DoZgfEf5EUQ70tA6mQlIxls6S1bONqclxT-bBm8xDlTxnaowqGo1vE-oA1FB97GoYXSO8HfOmu2vJQxaoUpRAmYwobp9p03UxUYeBbOySi-krCsrjdQTeUcyuAF8wdntaIxoEP0lNri_VPsVV2_NaOOv6Rf2abjjhLXnGOLzcmbdN5KObrAopKYu7EsyxehEKlRIFMk",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBt8Xk40fLAYq2tdC8rlYIq0FgJIoIoaR1a5r2JOWAM72N4kBnCYQHiRPqCVvJz3XGQn6yTBOxcdiLU7BrfLlk1AILVHlwU8Q72at1NOWW-iYHGCagvplzdEt0xR2XdC7GRSosCYjjLDPSZrWcIWENtVCx3SfqQ4qBwHr3wI7gE_PV0AoIlYXF1I0KfUmd1YMpZy0rNC0qJr33ETSNsgqnmjzbmCyz4eBnYMPj5eW9uMsYv0FEM-l0K",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuAX9sEcQmOEBLb74xIVeoVVGiTWalHvErESS1nyqxUUnRX1BZkjVsvEIkAXN7evspHXIQqfCE--LYffylpaM5-2uZ_07HqryGv6NJQI2rHD-JRwNMNgqlI8te7pvE2bjMIeY27e_OdoOM1rgKxcpORQ_1_CUjSpw5eWs7l9UduvqnRB5QLFplSeoUGN0uPKypEwXkc-NAPkak4ahJOphX89VGvleSVuHunFbXO2ib9r2b_qlRY2VXDE",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDxwNLD8CzhgZrz0FJR67xgQ-z-f6iQAUpa5RFM2PhEl6DOm1V6HlKsumJl6IdCXPnNk0F7BVzj9dYaj4NIQOCUIPEWl0LEqa2k-Im2hMovaEVZUzgEUR7WXzKjv0SDqP5mgdxn6dyMHtlJyM0uwSTrUF69K68RNJ-BtgppPBZinU-fZSPEXbK77oMcuCNHdIbUBRxGVplBObKhk0niYCYAHDBnQgnMMEr7KouOceBmMoRn3rq22Ape",
+    "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1509281373149-e957c6296406?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
 ]
 
-# Canonical TMDB CDN poster images (w500)
+# Canonical TMDB / IMDb CDN poster images (w500)
 KNOWN_TMDB_POSTERS: Dict[int, str] = {
     862: "https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",     # Toy Story
     603: "https://image.tmdb.org/t/p/w500/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",     # The Matrix
@@ -128,6 +132,30 @@ KNOWN_TMDB_POSTERS: Dict[int, str] = {
     85: "https://image.tmdb.org/t/p/w500/ceG9VzoRAVGwivFU40nmWqQ67wh.jpg",      # Raiders
     1892: "https://image.tmdb.org/t/p/w500/mDCBQNhR6R0PVF23aJ2mwtk5P5m.jpg",    # Return of the Jedi
     218: "https://image.tmdb.org/t/p/w500/qvktm0BHcnmDpul4Hz01GIazWPr.jpg",     # The Terminator
+    # 23 Classic movies with verified Amazon IMDb CDN posters
+    50: "https://m.media-amazon.com/images/M/MV5BOTE5MDUxZDUtZWZmZC00NDVmLWFhOGQtNWI2YTc4NzY3MGQ0XkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg",     # The Usual Suspects
+    480: "https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_QL75_UX380_CR0,4,380,562_.jpg",    # Jurassic Park
+    541: "https://m.media-amazon.com/images/M/MV5BOWQ4YTBmNTQtMDYxMC00NGFjLTkwOGQtNzdhNmY1Nzc1MzUxXkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg",    # Blade Runner
+    1036: "https://m.media-amazon.com/images/M/MV5BMGNlYmM1NmQtYWExMS00NmRjLTg5ZmEtMmYyYzJkMzljYWMxXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",   # Die Hard
+    1097: "https://m.media-amazon.com/images/M/MV5BYTNhNmY0YWMtMTczYi00MTA0LThhMmUtMTIxYzE0Y2QwMzRlXkEyXkFqcGc@._V1_QL75_UX380_CR0,15,380,562_.jpg",  # E.T.
+    1193: "https://m.media-amazon.com/images/M/MV5BYjBkMjgzMzYtNzRiMS00NDc3LWE4YTUtZjYxYjZhNjNhYzhhXkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg",   # One Flew Over the Cuckoo's Nest
+    1200: "https://m.media-amazon.com/images/M/MV5BN2ZiMmQ0YWItN2IwZS00Y2NhLWE0NzQtNGNiOGFjN2U4MWNmXkEyXkFqcGc@._V1_QL75_UX380_CR0,15,380,562_.jpg",  # Aliens
+    1214: "https://m.media-amazon.com/images/M/MV5BN2NhMDk2MmEtZDQzOC00MmY5LThhYzAtMDdjZGFjOGZjMjdjXkEyXkFqcGc@._V1_QL75_UX380_CR0,6,380,562_.jpg",   # Alien
+    1270: "https://m.media-amazon.com/images/M/MV5BZmM3ZjE0NzctNjBiOC00MDZmLTgzMTUtNGVlOWFlOTNiZDJiXkEyXkFqcGc@._V1_QL75_UX380_CR0,14,380,562_.jpg",  # Back to the Future
+    1527: "https://m.media-amazon.com/images/M/MV5BODU4ZTE5MWYtNmY2MC00NDkyLTk0NDgtNTk5YjgzMzc4NmQwXkEyXkFqcGc@._V1_QL75_UY562_CR6,0,380,562_.jpg",  # The Fifth Element
+    1573: "https://m.media-amazon.com/images/M/MV5BOGQyOWNmYTgtZWY0NS00NzhjLTg3NmMtMzcwYzQ2OTA2OTJkXkEyXkFqcGc@._V1_QL75_UX380_CR0,3,380,562_.jpg",   # Face/Off
+    1580: "https://m.media-amazon.com/images/M/MV5BZmQ0YTdhYzEtMjIxZC00MGFiLTlmNjktZmFlOWE2M2QxOTRhXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",   # Men in Black
+    1610: "https://m.media-amazon.com/images/M/MV5BMmNhYWJmN2EtZDYwNC00NzE0LWE5N2UtZTUyMDM4YjZmYWE3XkEyXkFqcGc@._V1_QL75_UY562_CR0,0,380,562_.jpg",   # The Hunt for Red October
+    1617: "https://m.media-amazon.com/images/M/MV5BODdiMjY1OGYtNDk0NC00NGQ1LWI4MDItOTJhMTM0YjE1YTAzXkEyXkFqcGc@._V1_QL75_UY562_CR2,0,380,562_.jpg",   # L.A. Confidential
+    1653: "https://m.media-amazon.com/images/M/MV5BZjQxNTc3YzQtZDA5ZC00MmM5LWE3NGYtMGE0Yjk3MDYwODVlXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",   # Gattaca
+    1682: "https://m.media-amazon.com/images/M/MV5BNzA3ZjZlNzYtMTdjMy00NjMzLTk5ZGYtMTkyYzNiOGM1YmM3XkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg",   # The Truman Show
+    1968: "https://m.media-amazon.com/images/M/MV5BZmU1MzlmOTMtZTNmMC00ZTA3LTkzMWMtOTc1MWNlMjFiYjFlXkEyXkFqcGc@._V1_QL75_UX380_CR0,10,380,562_.jpg",  # Breakfast at Tiffany's
+    2028: "https://m.media-amazon.com/images/M/MV5BZGZhZGQ1ZWUtZTZjYS00MDJhLWFkYjctN2ZlYjE5NWYwZDM2XkEyXkFqcGc@._V1_QL75_UY562_CR1,0,380,562_.jpg",   # Saving Private Ryan
+    2064: "https://m.media-amazon.com/images/M/MV5BZTVmZGRiODctNTI5OS00YzIwLTgxMGMtYjAxNjMyZGNmNzQwXkEyXkFqcGc@._V1_SX300.jpg",                        # Roger & Me
+    2324: "https://m.media-amazon.com/images/M/MV5BZTBhOGYzZjQtYzE0Mi00MGIwLWE0MWYtNzMxNTM2OTFkM2NjXkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg",   # Life Is Beautiful
+    2396: "https://m.media-amazon.com/images/M/MV5BYmM3MTllNzYtN2MzNS00NWQwLTk0NTEtNjY1MmMwYjNkNTE5XkEyXkFqcGc@._V1_QL75_UY562_CR8,0,380,562_.jpg",   # Shakespeare in Love
+    2572: "https://m.media-amazon.com/images/M/MV5BOTQwYmRhNGQtODI2Mi00ZTRlLTk0Y2QtY2NkNjE1MGNhNTgwXkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg",   # 10 Things I Hate About You
+    2762: "https://m.media-amazon.com/images/M/MV5BZWQ2OTY0M2UtMTQxNC00MmIzLTllNDQtNDQ0MTQyYzI2M2ZiXkEyXkFqcGc@._V1_QL75_UY562_CR0,0,380,562_.jpg",   # The Sixth Sense
 }
 
 # Canonical TMDB CDN backdrop images (original / w1280)

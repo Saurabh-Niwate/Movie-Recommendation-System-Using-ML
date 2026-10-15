@@ -42,17 +42,17 @@ export const HomePage: React.FC = () => {
   };
 
   useEffect(() => {
-    // Fetch starter & top rated movies
-    apiFetch<{ items: MovieItem[]; total: number }>('/movies?limit=60&sort=popular')
+    // Fetch starter & top rated movies (expand to full catalog)
+    apiFetch<{ items: MovieItem[]; total: number }>('/movies?limit=120&sort=popular')
       .then((data) => {
         const items = data.items || [];
         setAllMovies(items);
 
-        // Top rated 5
+        // Top rated 10
         const sortedTop = [...items].sort((a, b) => b.vote_average - a.vote_average);
-        setTopRated(sortedTop.slice(0, 5));
+        setTopRated(sortedTop.slice(0, 10));
 
-        // Quick roll 5 random
+        // Quick roll 10 random
         rollNewSelection(items);
       })
       .catch((err) => {
@@ -63,7 +63,7 @@ export const HomePage: React.FC = () => {
   const rollNewSelection = (pool: MovieItem[] = allMovies) => {
     if (!pool.length) return;
     const shuffled = [...pool].sort(() => 0.5 - Math.random());
-    setQuickRoll(shuffled.slice(0, 5));
+    setQuickRoll(shuffled.slice(0, 10));
   };
 
   // Keyboard shortcut: ⌘K or Ctrl+K focuses search
@@ -218,6 +218,10 @@ export const HomePage: React.FC = () => {
                           alt={movie.title}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                           loading="lazy"
+                          onError={(e) => {
+                            (e.currentTarget as HTMLImageElement).src =
+                              'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80';
+                          }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
                         {movie.year && (
@@ -316,6 +320,10 @@ export const HomePage: React.FC = () => {
                       alt={movie.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src =
+                          'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80';
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
                     {movie.year && (
@@ -425,6 +433,10 @@ export const HomePage: React.FC = () => {
                       alt={movie.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src =
+                          'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80';
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
                     {movie.year && (
@@ -478,6 +490,104 @@ export const HomePage: React.FC = () => {
                         </span>
                         <span>{movie.vote_average.toFixed(1)}</span>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Section 3: Curated Cinema Collection (Expanded Catalog) */}
+          <section className="w-full flex flex-col gap-6 mb-12">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-outline-variant/30 pb-4">
+              <div className="flex flex-col gap-0.5">
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-primary text-xl">movie_filter</span>
+                  <h2 className="text-xl sm:text-2xl font-bold text-on-surface tracking-tight">
+                    Featured Catalog
+                  </h2>
+                </div>
+              </div>
+              <Link
+                to="/rankings"
+                className="text-xs sm:text-sm font-semibold text-secondary hover:underline flex items-center gap-1"
+              >
+                <span>View Full Leaderboard</span>
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+              {allMovies.slice(10, 30).map((movie) => (
+                <div
+                  key={movie.id}
+                  onClick={() => setActiveDetailMovie(movie)}
+                  className="group flex flex-col rounded-xl bg-surface-container/60 backdrop-blur-md overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:bg-surface-container-high/90 hover:shadow-[0_12px_30px_rgba(0,0,0,0.7)] border border-transparent hover:border-primary/30 cursor-pointer"
+                >
+                  <div className="relative aspect-[2/3] w-full overflow-hidden bg-surface-container-lowest">
+                    <img
+                      src={getPosterUrl(movie)}
+                      alt={movie.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src =
+                          'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+                    {movie.year && (
+                      <span className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-[11px] font-bold text-on-surface shadow">
+                        {movie.year}
+                      </span>
+                    )}
+                    <div className="absolute bottom-2.5 left-2.5 flex items-center gap-1">
+                      {movie.genres.slice(0, 2).map((genre) => (
+                        <span
+                          key={genre}
+                          className="px-2 py-0.5 rounded-md bg-secondary/15 text-secondary text-[10px] font-bold uppercase"
+                        >
+                          {genre}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Hover Trailer Button */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-[2px]">
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActiveTrailer({ id: movie.id, title: movie.title, trailer_key: movie.trailer_key });
+                        }}
+                        className="px-4 py-2 rounded-full bg-primary-container text-on-primary-container text-xs font-bold shadow-[0_0_16px_rgba(128,131,255,0.6)] flex items-center gap-1.5 hover:scale-105 transition-all"
+                      >
+                        <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
+                          play_arrow
+                        </span>
+                        Trailer
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="p-3 flex flex-col justify-between flex-1 gap-1">
+                    <div>
+                      <h3 className="font-bold text-sm text-on-surface truncate" title={movie.title}>
+                        {movie.title}
+                      </h3>
+                      <p className="text-xs text-outline">{movie.genres[0] || 'Feature Film'}</p>
+                    </div>
+                    <div className="flex items-center justify-between pt-1">
+                      <span className="text-[11px] text-on-surface-variant font-medium">★ {movie.vote_average.toFixed(1)}</span>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActiveTrailer({ id: movie.id, title: movie.title, trailer_key: movie.trailer_key });
+                        }}
+                        className="text-[11px] text-secondary hover:underline"
+                      >
+                        Trailer
+                      </button>
                     </div>
                   </div>
                 </div>
