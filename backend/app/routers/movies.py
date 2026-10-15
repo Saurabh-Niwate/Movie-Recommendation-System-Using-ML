@@ -26,7 +26,7 @@ def list_movies(
     genre: Optional[str] = Query(None, description="Filter movies by genre"),
     search: Optional[str] = Query(None, description="Search query matching movie title"),
     sort: Optional[str] = Query("top_rated", description="Sort order: top_rated, recent, popular"),
-    limit: int = Query(24, ge=1, le=100, description="Items per page"),
+    limit: int = Query(24, ge=1, le=250, description="Items per page"),
     offset: int = Query(0, ge=0, description="Offset for pagination"),
     db: Session = Depends(get_db),
 ):
@@ -79,7 +79,7 @@ def search_movies(
     request: Request,
     q: Optional[str] = Query(None, description="Search term for movie title"),
     genre: Optional[str] = Query(None, description="Optional genre filter"),
-    limit: int = Query(30, ge=1, le=100),
+    limit: int = Query(30, ge=1, le=250),
     format: Optional[str] = Query(None, description="Optional response format"),
     db: Session = Depends(get_db),
 ):

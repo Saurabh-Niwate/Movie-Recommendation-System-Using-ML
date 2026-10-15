@@ -47,7 +47,7 @@ export const RankingsPage: React.FC = () => {
 
   useEffect(() => {
     // Load top rated catalog (fetch full catalog for rich filtering)
-    apiFetch<{ items: RankedMovie[] }>('/movies?limit=120&sort=top_rated')
+    apiFetch<{ items: RankedMovie[] }>('/movies?limit=100&sort=top_rated')
       .then((data) => {
         const sorted = (data.items || []).sort((a, b) => b.vote_average - a.vote_average);
         setMovies(sorted);

@@ -43,7 +43,7 @@ export const HomePage: React.FC = () => {
 
   useEffect(() => {
     // Fetch starter & top rated movies (expand to full catalog)
-    apiFetch<{ items: MovieItem[]; total: number }>('/movies?limit=120&sort=popular')
+    apiFetch<{ items: MovieItem[]; total: number }>('/movies?limit=100&sort=popular')
       .then((data) => {
         const items = data.items || [];
         setAllMovies(items);
